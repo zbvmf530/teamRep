@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.test.web.BoardListControl;
 import com.test.web.MainControl;
 
 
@@ -29,6 +30,7 @@ Map<String, Control> map;
 	public void init(ServletConfig config) throws ServletException {
 		// url패턴과 실행할 Control 구현클래스 정의.
 		map.put("/main.do", new MainControl());
+		map.put("/board.do", new BoardListControl());
 		System.out.println("컨트롤 실행!");
 		/*
 		 * map.put("/addForm.do", new AddFormControl()); //글등록화면 map.put("/addBoard.do",
