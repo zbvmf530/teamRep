@@ -12,10 +12,31 @@
 	let menutexts = ["마이페이지","로그아웃"];
 	// ["관리페이지", "로그아웃"]
 	// ["로그인", "회원가입"]
+	if(logid != 'null'){
+		if(auth == 'admin'){
+			menutexts = ["관리페이지", "로그아웃"];
+		}	
+		else{
+			menutexts = ["마이페이지","로그아웃"];	
+		}
+	}
+	else{
+		menutexts = ["로그인", "회원가입"];
+	}
 	$.each(menuItems,function(idx,item){
-		console.log(item);
-		$(item).text(menutexts[idx]);
+		//console.log(item);
+		let json = encodeURIComponent(JSON.stringify(totalList));
+		console.log($(item).find($('a')));
+		$(item).find($('a')).text(menutexts[idx]);
+		if(menutexts[idx]=='로그인'){$(item).find($('a')).prop('href',`tloginForm.do?navmenu=${json}`)}
+		else if(menutexts[idx]=='로그아웃'){$(item).find($('a')).prop('href',`logout.do?navmenu=${json}`)}
+		else if(menutexts[idx]=='회원가입'){$(item).find($('a')).prop('href',`signupform.do?navmenu=${json}`)}
+		else if(menutexts[idx]=='마이페이지'){$(item).find($('a')).prop('href',`mypage.do?navmenu=${json}`)}
+		else if(menutexts[idx]=='관리페이지'){$(item).find($('a')).prop('href',`admin.do`)}
+		/*$(item).text(menutexts[idx]);*/
 	});
+	
+		
 	//console.log($(document).find($('div[id="loginMenu"]')).prev());
  }
  

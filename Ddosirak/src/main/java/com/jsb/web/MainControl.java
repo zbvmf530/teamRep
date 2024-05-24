@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -57,6 +58,16 @@ public class MainControl implements Control {
 		req.setAttribute("totalList", TotalList);
 		req.setAttribute("json", json);
 		req.setAttribute("bestProducts", bestProducts);
+		
+		
+		HttpSession session = req.getSession();
+				
+		if(session.getAttribute("logId") == null) {
+			session.setAttribute("logId", "null");
+			if(session.getAttribute("auth")==null) 
+			{session.setAttribute("auth", "null");}
+			
+		}
 		
 		System.out.println("실행!");
 		req.getRequestDispatcher("views/main/main.tiles").forward(req, resp);

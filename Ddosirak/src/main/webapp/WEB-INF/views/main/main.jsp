@@ -4,13 +4,14 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map" %>
-  
+  <%String logId = (String) session.getAttribute("logId"); 
+String auth = (String) session.getAttribute("auth");
+%>
   
 <section class="py-12" id="howItWorks">
       <div class="container">
         <div class="row">
           <div class="col-12">
-
             <!-- Heading -->
             <h2 class="mb-10 text-center">
               상품 카테고리
@@ -90,5 +91,6 @@
     </section>
     <script>
 	const totalList = JSON.parse('${json}');
-	
+	const logid = '${logId}';
+	const auth = '${auth}';
 </script>

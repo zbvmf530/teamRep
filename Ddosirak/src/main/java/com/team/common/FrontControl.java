@@ -11,6 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jsb.web.MainControl;
+import com.ksh.web.AddMemberControl;
+import com.ksh.web.IdCheck;
+import com.ksh.web.LogOutControl;
+import com.ksh.web.SignupForm;
+import com.ksh.web.tLoginControl;
+import com.ksh.web.tLoginForm;
 
 
 
@@ -29,6 +35,14 @@ Map<String, Control> map;
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		map.put("/main.do", new MainControl());
+		
+		// 로그인, 회원가입 관련 콘트롤
+		map.put("/tloginForm.do", new tLoginForm());
+		map.put("/tlogin.do", new tLoginControl());
+		map.put("/signupform.do", new SignupForm());
+		map.put("/signup.do", new AddMemberControl());
+		map.put("/check.do", new IdCheck());
+		map.put("/logout.do", new LogOutControl());
 	}
 	
 	// service
