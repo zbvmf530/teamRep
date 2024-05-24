@@ -26,7 +26,7 @@
               <!-- Image -->
               <div class="card-img-top position-relative mx-auto" style="max-width: 120px;">
                 <!-- Image -->
-                <img class="img-fluid rounded-circle" src="jsb/imgs/saucedak.png" alt="...">
+                <img class="img-fluid rounded-circle" src="jsb/imgs/dosirak.png" alt="...">
               </div>
               <!-- Body -->
               <div class="card-body text-center">

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jsb.web.MainControl;
+import com.jsb.web.ProductListControl;
 
 
 
@@ -29,6 +30,7 @@ Map<String, Control> map;
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		map.put("/main.do", new MainControl());
+		map.put("/productList.do", new ProductListControl());
 	}
 	
 	// service
