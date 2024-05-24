@@ -2,12 +2,29 @@
  * 
  */
 
- $(document).ready(initNavMenu);
+ $(document).ready(initNavBar);
  
- function initNavMenu(){
+ function initNavBar(){
+	
+	makeCategory();
+	let menuItems = $(document).find($('div[id="loginMenu"] ul')).find('li');
+	// 세션정보 받아서 메뉴값 다르게 출력, href 다르게 설정
+	let menutexts = ["마이페이지","로그아웃"];
+	// ["관리페이지", "로그아웃"]
+	// ["로그인", "회원가입"]
+	$.each(menuItems,function(idx,item){
+		console.log(item);
+		$(item).text(menutexts[idx]);
+	});
+	//console.log($(document).find($('div[id="loginMenu"]')).prev());
+ }
+ 
+ function listPage(e){
+	console.log(e.innerText);
+ }
+ 
+ function makeCategory(){
 	// 대분류 초기화
-	
-	
 	$('ul[id="test"]').html('');
 	
 	 // 대분류에 소분류 넣기
@@ -47,9 +64,4 @@
 		 });
 		 
 	 });
-
- }
- 
- function listPage(e){
-	console.log(e.innerText);
  }

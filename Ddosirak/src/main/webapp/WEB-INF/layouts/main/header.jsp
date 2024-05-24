@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<nav class = "py-3 bg-info">
+<nav class = "py-3">
 	<div class="py-3">
 				<a class="text-body" href="./overview.html">
 		          공지사항
@@ -45,6 +45,16 @@
               <a class="nav-link" href="./account-orders.html">
                 <i class="fe fe-user"></i>
               </a>
+              <div class="card-body" id = loginMenu>
+		        <ul class="list-styled mb-0">
+		          <li class="list-styled-item">
+		            <a class="list-styled-link" id = "member" href="#!">로그인</a>
+		          </li>
+		          <li class="list-styled-item">
+		            <a class="list-styled-link" id = "signup" href="#!">회원가입</a>
+		          </li>
+		        </ul>
+     		 </div>
             </li>
             <li class="nav-item ms-lg-n4">
               <a class="nav-link" data-bs-toggle="offcanvas" href="#modalShoppingCart">
