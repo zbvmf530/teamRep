@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.test.web.MainControl;
+import com.test.web.ShopControl;
 
 
 
@@ -30,6 +31,7 @@ Map<String, Control> map;
 		// url패턴과 실행할 Control 구현클래스 정의.
 		map.put("/main.do", new MainControl());
 		System.out.println("컨트롤 실행!");
+		map.put("/shop.do", new ShopControl());
 		/*
 		 * map.put("/addForm.do", new AddFormControl()); //글등록화면 map.put("/addBoard.do",
 		 * new AddBoardControl()); map.put("/boardInfo.do", new BoardInfoControl());
