@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jsb.web.MainControl;
+import com.jsb.web.MypageControl;
 import com.ksh.web.AddMemberControl;
 import com.ksh.web.IdCheck;
 import com.ksh.web.LogOutControl;
@@ -34,7 +35,11 @@ Map<String, Control> map;
 	// init
 	@Override
 	public void init(ServletConfig config) throws ServletException {
+		// 메인페이지
 		map.put("/main.do", new MainControl());
+		
+		// 마이페이지
+		map.put("/mypage.do", new MypageControl());
 		
 		// 로그인, 회원가입 관련 콘트롤
 		map.put("/tloginForm.do", new tLoginForm());
@@ -49,9 +54,9 @@ Map<String, Control> map;
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// filter에서 이미 처리함
-		//resp.setContentType("text/html; charset=utf-8");
-		//resp.setCharacterEncoding("utf-8");
-		//req.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html; charset=utf-8");
+		resp.setCharacterEncoding("utf-8");
+		req.setCharacterEncoding("utf-8");
 		
 		String uri = req.getRequestURI();
 		String context = req.getContextPath();

@@ -8,7 +8,7 @@ import com.team.vo.TmemberVO;
 public interface MemberMapper {
 
 	
-	int addMember(TmemberVO mem);
+	int addMember(TmemberVO member);
 	int checkMember(String id);
 	int tselectMember(@Param("id") String id, @Param("pw") String pw);
 	TmemberVO getMember(String id);

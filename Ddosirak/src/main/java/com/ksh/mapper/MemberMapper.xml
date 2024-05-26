@@ -6,7 +6,7 @@
 
 <insert id="addMember" parameterType="com.team.vo.TmemberVO">
     insert into tbl_members (member_id, member_pw, name, phone_num, email,birthdate)
-    values(#{memid}, #{pw}, #{memname}, #{phone}, #{emil},#{birth})
+    values(#{memberId}, #{memberPw}, #{name}, #{phoneNum}, #{email},#{birthDate})
   </insert>
 
 <select id="checkMember" resultType="int" parameterType="String">

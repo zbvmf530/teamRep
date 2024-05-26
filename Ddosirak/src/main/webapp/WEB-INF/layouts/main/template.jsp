@@ -10,6 +10,8 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="./jsb/assets/favicon/favicon.ico" type="image/x-icon" />
     
+    <link rel="stylesheet" href="./jsb/css/styles.css"/>
+
     <!-- Libs CSS -->
     <link rel="stylesheet" href="./jsb/assets/css/libs.bundle.css" />
     
