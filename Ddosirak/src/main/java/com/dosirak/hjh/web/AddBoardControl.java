@@ -40,8 +40,8 @@ public class AddBoardControl implements Control {
 		
 		if(svc.addBoard(vo)){
 			System.out.println("등록성공");
-			resp.sendRedirect("boardList.do");
-			
+//			resp.sendRedirect("boardList.do");
+						
 		
 		}else {
 			System.out.println("등록실패");

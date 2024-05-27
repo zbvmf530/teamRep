@@ -75,7 +75,7 @@ document.getElementById('addReply').addEventListener('click', function(e) {
 //row생성을 함수에 담은것
 function makeRow(reply = {}) {
 	let tmpl = document.querySelector('div.reply li:nth-of-type(1)').cloneNode(true);
-	console.log(tmpl);
+	console.log("tmpl"+tmpl);
 	tmpl.style.display = 'block';
 	tmpl.setAttribute('data-rno', reply.replyNo);
 	tmpl.querySelector('span:nth-of-type(1)').innerText = reply.memberId;

@@ -31,7 +31,7 @@ public class BoardListControl implements Control {
 
 		BoardService svc = new BoardServiceImpl();
 
-		PageDTO pageDTO = new PageDTO(Integer.parseInt(page), svc.getTotal(search));
+		PageDTO pageDTO = new PageDTO(Integer.parseInt(page), svc.getTotalBoard(search));
 
 //		svc.replyCnt()
 
