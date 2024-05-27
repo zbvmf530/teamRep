@@ -5,18 +5,38 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.session.SqlSession;
 
+<<<<<<< HEAD
 import com.dosirak.kst.service.ProductService;
 import com.dosirak.kst.service.ProductServiceImpl;
+=======
+import com.dosirak.common.vo.OrderDetailVO;
+import com.dosirak.common.vo.OrderVO;
+import com.dosirak.common.vo.ProductVO;
+import com.dosirak.jsb.service.OrderDetailService;
+import com.dosirak.jsb.service.OrderDetailServiceImpl;
+import com.dosirak.jsb.service.OrderService;
+import com.dosirak.jsb.service.OrderServiceImpl;
+import com.dosirak.jsb.service.ProductService;
+import com.dosirak.jsb.service.ProductServiceImpl;
+import com.dosirak.ksh.service.MemberService;
+import com.dosirak.ksh.service.MemberServiceImpl;
+>>>>>>> refs/heads/master
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+<<<<<<< HEAD
 import com.team.vo.ProductVO;
+=======
+>>>>>>> refs/heads/master
 
 
 
 public class SqlTest {
 	public static void main(String[] args) {
+<<<<<<< HEAD
 
 		/*
 		 * ProductService svc = new ProductServiceImpl(); List<ProductVO> pList =
@@ -25,6 +45,30 @@ public class SqlTest {
 		
 //		List<Map<String,String>> maincat = svc.getMainCat();
 
+=======
+		
+//		MemberService msvc = new MemberServiceImpl();
+//		System.out.println(msvc.getMember("jsb0820"));
+		
+		OrderService svc = new OrderServiceImpl();
+		OrderDetailService dsvc = new OrderDetailServiceImpl();
+		
+		String userId = "jsb0820";
+		
+		List<OrderVO> ovo = svc.getOrderList(userId);
+		
+		ovo.forEach(item->{
+			System.out.println(item);
+			System.out.println("----------------");
+			List<OrderDetailVO> detailList = dsvc.getOrderDetail(item);
+			
+			detailList.forEach(detail->{System.out.println(detail);});
+			});
+		
+//		ProductService svc = new ProductServiceImpl();
+//		List<Map<String,String>> maincat = svc.getMainCat();
+//
+>>>>>>> refs/heads/master
 //		// 주문수 많은 순으로 상품코드 가져오는 코드
 //		List<Map<String,Integer>> bestsellers = svc.getBestSeller();  
 //		List<Integer> bestItems = new ArrayList<>();

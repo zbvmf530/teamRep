@@ -1,18 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@page import="java.util.List"%>
-<%@page import="java.util.Map"%>
-
+<%@page import="java.util.Map" %>
+  <%String logId = (String) session.getAttribute("logId"); 
+String auth = (String) session.getAttribute("auth");
+%>
+  
 
 <section class="py-12" id="howItWorks">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
 
-				<!-- Heading -->
-				<h2 class="mb-10 text-center">상품 카테고리</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <!-- Heading -->
+            <h2 class="mb-10 text-center">
+              상품 카테고리
+            </h2>
 
 			</div>
 		</div>
@@ -49,8 +53,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<c:forEach var="product" items="${bestProducts}" begin="1" end="3"
-						step="1">
+					<c:forEach var="product" items="${bestProducts}" begin="1" end="3" step="1">
 						<div class="col-12 col-md-4 col-lg-3">
 							<div class="card">
 								<div class="card-img">
@@ -89,4 +92,6 @@
 </section>
 <script>
 	const totalList = JSON.parse('${json}');
+	const logid = '${logId}';
+	const auth = '${auth}';
 </script>
