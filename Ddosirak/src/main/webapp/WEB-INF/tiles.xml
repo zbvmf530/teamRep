@@ -8,6 +8,11 @@
   		<put-attribute name="body" value="/WEB-INF/layouts/main/body.jsp"/>
   		<put-attribute name="footer" value="/WEB-INF/layouts/main/footer.jsp"/>
   </definition>
+
+  	<definition name="WILDCARD:views/main/*" extends="ddosirak.homepage">
+		<put-attribute name="body" value="/WEB-INF/views/main/{1}.jsp" />
+	</definition>
+	
   
   <!-- 성훈씨 페이지(관리자 페이지) 타일즈 정의 부분입니다. -->
   <definition name="ddosirak.adminpage" template="/WEB-INF/layouts/admin/template.jsp">
@@ -17,6 +22,7 @@
   <definition name="WILDCARD:views/main/*" extends="ddosirak.homepage">
   <put-attribute name="body" value="/WEB-INF/views/main/{1}.jsp"/>
   </definition>
+  
   
   <!-- 관리자 페이지 와일드카드 정의부분입니다. -->
     <definition name="WILDCARD:views/admin/*" extends="">

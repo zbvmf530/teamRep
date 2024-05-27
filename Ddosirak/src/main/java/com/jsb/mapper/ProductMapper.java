@@ -8,7 +8,7 @@ import com.team.vo.ProductVO;
 
 
 public interface ProductMapper {
-	List<ProductVO> productList();
+	List<ProductVO> productList(String mainCategory);
 	
 	List<Map<String,String>> getMainCategory();
 	List<String> getSubCategory(String mainCategory);

@@ -12,14 +12,11 @@ import com.team.vo.ProductVO;
 
 
 public class ProductServiceImpl implements ProductService{
+	
 	SqlSession session = DataSource.getInstance().openSession(true);
 	ProductMapper mapper = session.getMapper(ProductMapper.class);
 	
 
-	@Override
-	public List<ProductVO> productList() {
-		return mapper.productList();
-	}
 
 
 	@Override
@@ -48,6 +45,12 @@ public class ProductServiceImpl implements ProductService{
 	public ProductVO getProduct(int product_code) {
 		// TODO Auto-generated method stub
 		return mapper.getProduct(product_code);
+	}
+
+
+	@Override
+	public List<ProductVO> productList(String main_category) {
+		return mapper.productList(main_category);
 	}
 
 

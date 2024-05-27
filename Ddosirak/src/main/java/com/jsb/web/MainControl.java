@@ -29,7 +29,9 @@ public class MainControl implements Control {
 		// 주문수 많은 순으로 상품코드 가져오는 코드
 		List<Map<String,Integer>> bestsellers = svc.getBestSeller();  
 		List<Integer> bestItems = new ArrayList<>();
-		for(Map<String,Integer> bs : bestsellers) {bestItems.add(Integer.parseInt(String.valueOf(bs.get("PRODUCT_CODE"))));}
+		for(Map<String,Integer> bs : bestsellers) {
+			bestItems.add(Integer.parseInt(String.valueOf(bs.get("PRODUCT_CODE"))));
+			}
 		
 		
 		// 주문수 많은 상품코드로 상품정보 불러오는 코드

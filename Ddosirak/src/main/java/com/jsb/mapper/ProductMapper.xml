@@ -3,10 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jsb.mapper.ProductMapper">
-	<select id="productList" resultType="com.team.vo.ProductVO">
+	<select id="productList" resultType="com.team.vo.ProductVO" parameterType="String">
 		select * from tbl_products
-		order
-		by product_code
+		where main_category = '${mainCategory}'
+		order by product_code
 	</select>
 	<select id="getMainCategory" resultType="hashmap">
 		select MAIN_CATEGORY, count(1)
@@ -30,4 +30,6 @@
 	<select id="getProduct" parameterType = "int" resultType="com.team.vo.ProductVO">
 	select * from tbl_products where product_code=${productCode}
 	</select>
+	
+	
 </mapper>
