@@ -1,11 +1,11 @@
-package com.jsb.service;
+package com.dosirak.jsb.service;
 
 import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.jsb.mapper.ProductMapper;
+import com.dosirak.jsb.mapper.ProductMapper;
 import com.team.common.DataSource;
 import com.team.vo.ProductVO;
 

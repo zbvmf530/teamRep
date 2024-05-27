@@ -7,8 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.jsb.service.ProductService;
-import com.jsb.service.ProductServiceImpl;
+import com.dosirak.jsb.service.ProductService;
+import com.dosirak.jsb.service.ProductServiceImpl;
 import com.team.common.Control;
 import com.team.vo.ProductVO;
 

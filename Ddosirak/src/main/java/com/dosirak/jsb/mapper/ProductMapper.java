@@ -1,4 +1,4 @@
-package com.jsb.mapper;
+package com.dosirak.jsb.mapper;
 
 import java.util.List;
 import java.util.Map;
