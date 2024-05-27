@@ -7,6 +7,7 @@
  function initNavBar(){
 	
 	makeCategory();
+	let json = encodeURIComponent(JSON.stringify(totalList));
 	let menuItems = $(document).find($('div[id="loginMenu"] ul')).find('li');
 	// 세션정보 받아서 메뉴값 다르게 출력, href 다르게 설정
 	let menutexts = ["마이페이지","로그아웃"];
@@ -25,7 +26,7 @@
 	}
 	$.each(menuItems,function(idx,item){
 		//console.log(item);
-		let json = encodeURIComponent(JSON.stringify(totalList));
+		
 		console.log($(item).find($('a')));
 		$(item).find($('a')).text(menutexts[idx]);
 		if(menutexts[idx]=='로그인'){$(item).find($('a')).prop('href',`tloginForm.do?navmenu=${json}`)}
@@ -38,6 +39,12 @@
 	
 		
 	//console.log($(document).find($('div[id="loginMenu"]')).prev());
+	
+	// 공지사항, q&a 설정(메뉴바)
+	$(document).find($('a[id="notice"]')).prop('href',`boardList.do?navmenu=${json}`);
+	//page searchCondition keyword
+	$(document).find($('a[id="qna"]')).prop('href',`queryList.do?navmenu=${json}`);
+	
  }
  
  function listPage(e){

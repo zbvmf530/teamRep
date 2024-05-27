@@ -1,7 +1,7 @@
 <%@ tag body-content = "empty" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%@ attribute name="pageInfo" type="com.yedam.common.PageDTO" required="true" %>
+<%@ attribute name="pageInfo" type="com.dosirak.common.PageDTO" required="true" %>
 
 <div class="center">
   <div class="pagination">

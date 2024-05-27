@@ -13,6 +13,8 @@ import com.dosirak.common.vo.BoardVO;
 import com.dosirak.common.vo.SearchVO;
 import com.dosirak.hjh.service.BoardService;
 import com.dosirak.hjh.service.BoardServiceImpl;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class BoardListControl implements Control {
 
@@ -23,7 +25,7 @@ public class BoardListControl implements Control {
 		String page = req.getParameter("page");
 		String sc = req.getParameter("searchCondition");
 		String kw = req.getParameter("keyword");
-
+		
 		page = page == null ? "1" : page;
 		search.setPage(Integer.parseInt(page));
 		search.setKeyword(kw);
@@ -43,7 +45,10 @@ public class BoardListControl implements Control {
 		req.setAttribute("paging", pageDTO);
 		req.setAttribute("searchCondition", sc);
 		req.setAttribute("keyword", kw);
-
+		
+		String json = req.getParameter("navmenu");
+		req.setAttribute("json", json);
+		System.out.println(json);
 		req.getRequestDispatcher(path).forward(req, resp);
 	}
 

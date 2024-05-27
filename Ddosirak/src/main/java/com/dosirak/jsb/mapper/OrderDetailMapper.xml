@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dosirak.jsb.mapper.OrderDetailMapper">
+<select id="orderDetailList" parameterType="com.dosirak.common.vo.OrderVO" resultType="com.dosirak.common.vo.OrderDetailVO">
+		select * from tbl_details
+		where order_no = #{orderNo}
+		and member_id = #{memberId}
+	</select>
+</mapper>

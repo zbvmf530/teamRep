@@ -12,16 +12,16 @@ import org.apache.ibatis.session.SqlSession;
 import com.dosirak.common.vo.OrderDetailVO;
 import com.dosirak.common.vo.OrderVO;
 import com.dosirak.common.vo.ProductVO;
+import com.dosirak.jsb.service.OrderDetailService;
+import com.dosirak.jsb.service.OrderDetailServiceImpl;
+import com.dosirak.jsb.service.OrderService;
+import com.dosirak.jsb.service.OrderServiceImpl;
+import com.dosirak.jsb.service.ProductService;
+import com.dosirak.jsb.service.ProductServiceImpl;
+import com.dosirak.ksh.service.MemberService;
+import com.dosirak.ksh.service.MemberServiceImpl;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.jsb.service.OrderDetailService;
-import com.jsb.service.OrderDetailServiceImpl;
-import com.jsb.service.OrderService;
-import com.jsb.service.OrderServiceImpl;
-import com.jsb.service.ProductService;
-import com.jsb.service.ProductServiceImpl;
-import com.ksh.service.MemberService;
-import com.ksh.service.MemberServiceImpl;
 
 
 
