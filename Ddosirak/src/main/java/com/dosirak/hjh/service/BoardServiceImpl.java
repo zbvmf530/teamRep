@@ -22,7 +22,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
-	public int getTotal(SearchVO search) {
+	public int getTotalBoard(SearchVO search) {
 		return mapper.getTotalCnt(search);
 	}
 	@Override
@@ -46,11 +46,4 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.deleteBoard(board) == 1;
 	}
 
-
-	
-
-
-
-	
-	
 }
