@@ -46,11 +46,4 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.deleteBoard(board) == 1;
 	}
 
-
-	
-
-
-
-	
-	
 }
