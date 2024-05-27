@@ -6,14 +6,14 @@
 
   <!--     select * from tbl_boards2 -->
   <!--     order by board_no -->
-  <select id="boardList" resultType="com.team.vo.BoardVO">
+  <select id="boardList" resultType="com.dosirak.common.vo.BoardVO">
      select *
      from tbl_boards2 b
   </select>
   
 
 
-	<select id="boardListPaging" parameterType="com.team.vo.SearchVO">
+	<select id="boardListPaging" parameterType="com.dosirak.common.vo.SearchVO">
 		select r.*
 		from( select rownum rn, a.*
 			from (select b.*, (select count(1) from tbl_replyes2 r where r.board_no = b.board_no) as "reply_cnt"
@@ -39,7 +39,7 @@
 		where r.rn > (#{page} -1) * 10
 	</select>
 	
-	<select id= "getTotalCnt" resultType="int" parameterType="com.team.vo.SearchVO">
+	<select id= "getTotalCnt" resultType="int" parameterType="com.dosirak.common.vo.SearchVO">
 	select count(1) from tbl_boards2 
 				where 
 				<choose>
@@ -58,12 +58,12 @@
 	
 	</select>
 	
-	<insert id="insertBoard" parameterType="com.team.vo.BoardVO">
+	<insert id="insertBoard" parameterType="com.dosirak.common.vo.BoardVO">
 		insert into tbl_boards2(board_no, category, board_title, board_content)
 		values (board2_seq.nextval,#{category},#{boardTitle},#{boardContent})
   </insert>
 	
-	<select id ="selectBoard" parameterType="int" resultType="com.team.vo.BoardVO">
+	<select id ="selectBoard" parameterType="int" resultType="com.dosirak.common.vo.BoardVO">
 	select * from tbl_boards2
 	where board_no = #{boardNo}
 	</select>
@@ -75,7 +75,7 @@
 	</update>
 	
 		
-	<update id="updateBoard"  parameterType="com.team.vo.BoardVO" >
+	<update id="updateBoard"  parameterType="com.dosirak.common.vo.BoardVO" >
 	update tbl_boards2
 	set board_title = #{boardTitle} , board_content = #{boardContent}
 	where board_no = #{boardNo}

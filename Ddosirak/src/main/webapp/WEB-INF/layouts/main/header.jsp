@@ -3,7 +3,7 @@
 
 <nav class = "py-3">
 	<div class="py-3">
-				<a class="text-body" href="./overview.html">
+				<a class="text-body" href="./boardList.do">
 		          공지사항
 		        </a>
 		        <a class="text-body" href="./overview.html">

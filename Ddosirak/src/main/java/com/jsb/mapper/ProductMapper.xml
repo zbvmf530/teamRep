@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jsb.mapper.ProductMapper">
-	<select id="productList" resultType="com.team.vo.ProductVO">
+	<select id="productList" resultType="com.dosirak.common.vo.ProductVO">
 		select * from tbl_products
 		order
 		by product_code
@@ -27,7 +27,7 @@
 	order by 2 desc
 	</select>
 	
-	<select id="getProduct" parameterType = "int" resultType="com.team.vo.ProductVO">
+	<select id="getProduct" parameterType = "int" resultType="com.dosirak.common.vo.ProductVO">
 	select * from tbl_products where product_code=${productCode}
 	</select>
 </mapper>
