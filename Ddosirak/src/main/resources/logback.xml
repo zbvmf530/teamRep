@@ -8,7 +8,7 @@
     </encoder>
   </appender>
 
-  <logger name="com.jsb.mapper.ProductMapper">
+  <logger name="com.dosirak.kst.mapper.ProductMapper">
     <level value="debug"/>
   </logger>
   <root level="error">

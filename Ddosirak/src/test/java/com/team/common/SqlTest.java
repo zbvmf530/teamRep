@@ -7,8 +7,8 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.dosirak.jsb.service.ProductService;
-import com.dosirak.jsb.service.ProductServiceImpl;
+import com.dosirak.kst.service.ProductService;
+import com.dosirak.kst.service.ProductServiceImpl;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.team.vo.ProductVO;
@@ -18,9 +18,10 @@ import com.team.vo.ProductVO;
 public class SqlTest {
 	public static void main(String[] args) {
 
-		ProductService svc = new ProductServiceImpl();
-		List<ProductVO> pList = svc.productList();
-		for(ProductVO pvo : pList) {System.out.println(pvo);}
+		/*
+		 * ProductService svc = new ProductServiceImpl(); List<ProductVO> pList =
+		 * svc.productList(); for(ProductVO pvo : pList) {System.out.println(pvo);}
+		 */
 		
 //		List<Map<String,String>> maincat = svc.getMainCat();
 

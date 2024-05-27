@@ -1,4 +1,4 @@
-package com.jsb.web;
+package com.dosirak.kst.web;
 
 import java.io.IOException;
 import java.util.List;
@@ -7,8 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dosirak.jsb.service.ProductService;
-import com.dosirak.jsb.service.ProductServiceImpl;
+import com.dosirak.kst.service.ProductService;
+import com.dosirak.kst.service.ProductServiceImpl;
 import com.team.common.Control;
 import com.team.vo.ProductVO;
 
@@ -30,7 +30,7 @@ public class ProductListControl implements Control {
 		req.setAttribute("productList", list);
 
 		
-		req.getRequestDispatcher("views/main/productList.tiles").forward(req, resp);
+		req.getRequestDispatcher("views/product/productList.tiles").forward(req, resp);
 		
 	}
 

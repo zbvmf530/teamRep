@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.jsb.web.MainControl;
-import com.jsb.web.ProductDetailControl;
-import com.jsb.web.ProductListControl;
+import com.dosirak.kst.web.MainControl;
+import com.dosirak.kst.web.ProductDetailControl;
+import com.dosirak.kst.web.ProductListControl;
 
 public class FrontControl extends HttpServlet {
 

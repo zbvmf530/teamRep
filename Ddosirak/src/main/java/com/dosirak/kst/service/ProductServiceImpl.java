@@ -1,11 +1,11 @@
-package com.dosirak.jsb.service;
+package com.dosirak.kst.service;
 
 import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.dosirak.jsb.mapper.ProductMapper;
+import com.dosirak.kst.mapper.ProductMapper;
 import com.team.common.DataSource;
 import com.team.vo.ProductVO;
 
@@ -51,6 +51,26 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public List<ProductVO> productList(String main_category) {
 		return mapper.productList(main_category);
+	}
+
+
+	@Override
+	public List<String> getOptionsForProduct(int code) {
+		return mapper.getOptions(code);
+	}
+
+
+	@Override
+	public String getName(int code) {
+		// TODO Auto-generated method stub
+		return mapper.getName(code);
+	}
+
+
+	@Override
+	public List<Map<String, Integer>> getOptionPricesForProduct(int code) {
+		// TODO Auto-generated method stub
+		return mapper.getPrice(code);
 	}
 
 

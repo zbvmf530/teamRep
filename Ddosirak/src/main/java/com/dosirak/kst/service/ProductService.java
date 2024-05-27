@@ -1,4 +1,4 @@
-package com.dosirak.jsb.service;
+package com.dosirak.kst.service;
 
 import java.util.List;
 import java.util.Map;
@@ -12,4 +12,7 @@ public interface ProductService {
 	List<Map<String,String>> getMainCat();
 	List<String> getSubCat(String mainCat);
 	List<Map<String,Integer>> getBestSeller();
+	List<String> getOptionsForProduct(int code);
+	String getName(int code);
+	List<Map<String, Integer>> getOptionPricesForProduct(int code);
 }

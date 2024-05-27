@@ -1,4 +1,4 @@
-package com.dosirak.jsb.mapper;
+package com.dosirak.kst.mapper;
 
 import java.util.List;
 import java.util.Map;
@@ -15,4 +15,10 @@ public interface ProductMapper {
 	List<Map<String,Integer>> getBestSeller();
 
 	ProductVO getProduct(int productCode);
+
+	List<String> getOptions(int code);
+
+	String getName(int code);
+
+	List<Map<String, Integer>> getPrice(int code);
 }
