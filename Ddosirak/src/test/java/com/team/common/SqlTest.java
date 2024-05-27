@@ -5,14 +5,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.jsb.service.OrderDetailService;
+import com.jsb.service.OrderDetailServiceImpl;
+import com.jsb.service.OrderService;
+import com.jsb.service.OrderServiceImpl;
 import com.jsb.service.ProductService;
 import com.jsb.service.ProductServiceImpl;
 import com.ksh.service.MemberService;
 import com.ksh.service.MemberServiceImpl;
+import com.team.vo.OrderDetailVO;
+import com.team.vo.OrderVO;
 import com.team.vo.ProductVO;
 
 
@@ -20,8 +28,23 @@ import com.team.vo.ProductVO;
 public class SqlTest {
 	public static void main(String[] args) {
 		
-		MemberService msvc = new MemberServiceImpl();
-		System.out.println(msvc.getMember("jsb0820"));
+//		MemberService msvc = new MemberServiceImpl();
+//		System.out.println(msvc.getMember("jsb0820"));
+		
+		OrderService svc = new OrderServiceImpl();
+		OrderDetailService dsvc = new OrderDetailServiceImpl();
+		
+		String userId = "jsb0820";
+		
+		List<OrderVO> ovo = svc.getOrderList(userId);
+		
+		ovo.forEach(item->{
+			System.out.println(item);
+			System.out.println("----------------");
+			List<OrderDetailVO> detailList = dsvc.getOrderDetail(item);
+			
+			detailList.forEach(detail->{System.out.println(detail);});
+			});
 		
 //		ProductService svc = new ProductServiceImpl();
 //		List<Map<String,String>> maincat = svc.getMainCat();

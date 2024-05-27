@@ -24,6 +24,7 @@
   <mappers>
     <mapper resource="com/jsb/mapper/ProductMapper.xml"/>
     <mapper resource="com/ksh/mapper/MemberMapper.xml"/>
-    
+    <mapper resource="com/jsb/mapper/OrderMapper.xml"/>
+    <mapper resource="com/jsb/mapper/OrderDetailMapper.xml"/>
   </mappers>
 </configuration>

@@ -308,29 +308,29 @@ svg {
   vertical-align: middle;
 }
 
-table {
+.ttable {
   caption-side: bottom;
   border-collapse: collapse;
 }
 
-caption {
+.tcaption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   color: #6c757d;
   text-align: left;
 }
 
-th {
+.tth {
   text-align: inherit;
   text-align: -webkit-match-parent;
 }
 
-thead,
-tbody,
-tfoot,
-tr,
-td,
-th {
+.tthead,
+.ttbody,
+.ttfoot,
+.ttr,
+.ttd,
+.tth {
   border-color: inherit;
   border-style: solid;
   border-width: 0;
