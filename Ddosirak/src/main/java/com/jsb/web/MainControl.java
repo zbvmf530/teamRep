@@ -70,7 +70,7 @@ public class MainControl implements Control {
 		}
 		
 		System.out.println("실행!");
-		req.getRequestDispatcher("views/main/main.tiles").forward(req, resp);
+		req.getRequestDispatcher("main/main.tiles").forward(req, resp);
 	}
 
 }
