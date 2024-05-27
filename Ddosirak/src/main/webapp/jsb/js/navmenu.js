@@ -53,7 +53,7 @@
 		 //console.log(totalList[key]);
 		 let maincat = $('<li class="nav-item dropdown position-static"/>');
 		 let mainname = $('<a class="nav-link" data-bs-toggle="dropdown" href="#"></a>');
-		 let path1 = '/productlist.do?main='+key+'&sub=null';
+		 let path1 = 'productlist.do?main='+key+'&sub=null';
 		 mainname.prop('href',path1);
 		 mainname.text(key);
 		 let dropdownCard = $('<div class="dropdown-menu w-100"><div class="card card-lg"> <div class="card-body"> <div class="tab-content"> <div class="tab-pane fade show active" id="navTab"> <div class="container"> <div class="row"></div></div></div></div></div></div></div>');
@@ -72,8 +72,8 @@
 			 $.each(totalList[key2],function(idx,category){
 				let subCategory = $('<li class="list-styled-item">');
 				// 여기에 상품목록 페이지 링크 걸어서 테스트
-				let pageLink = $('<a class="list-styled-link" href="/productlist.do?">');
-				let path2 = '/productlist.do?main='+key2+'&sub='+category;
+				let pageLink = $('<a class="list-styled-link" href="productlist.do?">');
+				let path2 = 'productlist.do?main='+key2+'&sub='+category;
 				pageLink.prop('href',path2);
 				pageLink.text(category);
 				subCategory.append(pageLink);
