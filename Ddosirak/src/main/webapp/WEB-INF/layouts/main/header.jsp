@@ -3,10 +3,11 @@
 
 <nav class = "py-3">
 	<div class="py-3">
-				<a class="text-body" href="./boardList.do">
+
+				<a class="text-body" id = "notice" href="./boardList.do">
 		          공지사항
 		        </a>
-		        <a class="text-body" href="./overview.html">
+		        <a class="text-body" id = "qna"href="./overview.html">
 		          Q&A
 		        </a>
 		</div>

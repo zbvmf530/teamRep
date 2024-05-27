@@ -23,14 +23,14 @@ import com.dosirak.hjh.web.RemoveReplyControl;
 import com.dosirak.hjh.web.ReplyListControl;
 import com.dosirak.hjh.web.TotalCountControl;
 import com.dosirak.hjh.web.queryListControl;
-import com.jsb.web.MainControl;
-import com.jsb.web.MypageControl;
-import com.ksh.web.AddMemberControl;
-import com.ksh.web.IdCheck;
-import com.ksh.web.LogOutControl;
-import com.ksh.web.SignupForm;
-import com.ksh.web.tLoginControl;
-import com.ksh.web.tLoginForm;
+import com.dosirak.jsb.web.MainControl;
+import com.dosirak.jsb.web.MypageControl;
+import com.dosirak.ksh.web.AddMemberControl;
+import com.dosirak.ksh.web.IdCheck;
+import com.dosirak.ksh.web.LogOutControl;
+import com.dosirak.ksh.web.SignupForm;
+import com.dosirak.ksh.web.tLoginControl;
+import com.dosirak.ksh.web.tLoginForm;
 
 
 
