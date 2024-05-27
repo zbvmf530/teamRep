@@ -2,9 +2,9 @@ package com.ksh.service;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.team.common.DataSource;
+import com.dosirak.common.DataSource;
+import com.dosirak.common.vo.TmemberVO;
 import com.ksh.mapper.MemberMapper;
-import com.team.vo.TmemberVO;
 
 public class MemberServiceImpl implements MemberService {
 

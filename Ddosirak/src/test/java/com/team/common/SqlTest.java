@@ -9,6 +9,9 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.dosirak.common.vo.OrderDetailVO;
+import com.dosirak.common.vo.OrderVO;
+import com.dosirak.common.vo.ProductVO;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jsb.service.OrderDetailService;
@@ -19,9 +22,6 @@ import com.jsb.service.ProductService;
 import com.jsb.service.ProductServiceImpl;
 import com.ksh.service.MemberService;
 import com.ksh.service.MemberServiceImpl;
-import com.team.vo.OrderDetailVO;
-import com.team.vo.OrderVO;
-import com.team.vo.ProductVO;
 
 
 

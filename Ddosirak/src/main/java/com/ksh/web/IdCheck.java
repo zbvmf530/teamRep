@@ -8,10 +8,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dosirak.common.Control;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.team.common.Control;
-
 import com.ksh.service.MemberService;
 import com.ksh.service.MemberServiceImpl;
 public class IdCheck implements Control {

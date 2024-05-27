@@ -3,7 +3,7 @@ package com.jsb.service;
 import java.util.List;
 import java.util.Map;
 
-import com.team.vo.ProductVO;
+import com.dosirak.common.vo.ProductVO;
 
 // 비즈니스 로직
 public interface ProductService {

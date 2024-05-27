@@ -9,11 +9,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.team.common.Control;
-
+import com.dosirak.common.Control;
+import com.dosirak.common.vo.TmemberVO;
 import com.ksh.service.MemberService;
 import com.ksh.service.MemberServiceImpl;
-import com.team.vo.TmemberVO;
 
 public class AddMemberControl implements Control {
 

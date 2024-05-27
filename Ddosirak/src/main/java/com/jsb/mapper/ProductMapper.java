@@ -3,7 +3,7 @@ package com.jsb.mapper;
 import java.util.List;
 import java.util.Map;
 
-import com.team.vo.ProductVO;
+import com.dosirak.common.vo.ProductVO;
 
 
 

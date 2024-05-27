@@ -1,6 +1,6 @@
 package com.ksh.service;
 
-import com.team.vo.TmemberVO;
+import com.dosirak.common.vo.TmemberVO;
 
 public interface MemberService {
 	boolean addMember(TmemberVO member);

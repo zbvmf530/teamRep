@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.dosirak.common.Control;
+import com.dosirak.common.vo.TmemberVO;
 import com.ksh.service.MemberService;
 import com.ksh.service.MemberServiceImpl;
-import com.team.common.Control;
-import com.team.vo.TmemberVO;
 
 public class tLoginControl implements Control {
 

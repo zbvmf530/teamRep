@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.team.common.Control;
+import com.dosirak.common.Control;
 
 public class tLoginForm implements Control {
 

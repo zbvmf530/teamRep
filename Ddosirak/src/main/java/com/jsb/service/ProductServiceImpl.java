@@ -5,9 +5,9 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.dosirak.common.DataSource;
+import com.dosirak.common.vo.ProductVO;
 import com.jsb.mapper.ProductMapper;
-import com.team.common.DataSource;
-import com.team.vo.ProductVO;
 
 
 

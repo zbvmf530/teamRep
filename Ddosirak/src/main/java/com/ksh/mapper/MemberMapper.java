@@ -2,8 +2,7 @@ package com.ksh.mapper;
 
 import org.apache.ibatis.annotations.Param;
 
-
-import com.team.vo.TmemberVO;
+import com.dosirak.common.vo.TmemberVO;
 
 public interface MemberMapper {
 

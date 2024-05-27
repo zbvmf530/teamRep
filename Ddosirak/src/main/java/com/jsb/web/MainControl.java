@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.dosirak.common.Control;
+import com.dosirak.common.vo.ProductVO;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jsb.service.ProductService;
 import com.jsb.service.ProductServiceImpl;
-import com.team.common.Control;
-import com.team.vo.ProductVO;
 
 public class MainControl implements Control {
 

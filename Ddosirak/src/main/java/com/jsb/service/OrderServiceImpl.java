@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.dosirak.common.DataSource;
+import com.dosirak.common.vo.OrderVO;
 import com.jsb.mapper.OrderMapper;
-import com.team.common.DataSource;
-import com.team.vo.OrderVO;
 
 public class OrderServiceImpl implements OrderService{
 

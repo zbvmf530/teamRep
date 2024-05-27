@@ -26,5 +26,7 @@
     <mapper resource="com/ksh/mapper/MemberMapper.xml"/>
     <mapper resource="com/jsb/mapper/OrderMapper.xml"/>
     <mapper resource="com/jsb/mapper/OrderDetailMapper.xml"/>
+    <mapper resource="com/hjh/mapper/BoardMapper.xml"/>
+    <mapper resource="com/hjh/mapper/ReplyMapper.xml"/>
   </mappers>
 </configuration>

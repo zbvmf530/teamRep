@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.dosirak.common.Control;
+import com.dosirak.common.vo.OrderDetailVO;
+import com.dosirak.common.vo.OrderVO;
 import com.jsb.service.OrderDetailService;
 import com.jsb.service.OrderDetailServiceImpl;
 import com.jsb.service.OrderService;
 import com.jsb.service.OrderServiceImpl;
-import com.team.common.Control;
-import com.team.vo.OrderDetailVO;
-import com.team.vo.OrderVO;
 
 public class MypageControl implements Control {
 
