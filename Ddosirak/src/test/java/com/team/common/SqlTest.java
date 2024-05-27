@@ -9,6 +9,10 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 
+
+import com.dosirak.kst.service.ProductService;
+import com.dosirak.kst.service.ProductServiceImpl;
+
 import com.dosirak.common.vo.OrderDetailVO;
 import com.dosirak.common.vo.OrderVO;
 import com.dosirak.common.vo.ProductVO;
@@ -20,13 +24,27 @@ import com.dosirak.jsb.service.ProductService;
 import com.dosirak.jsb.service.ProductServiceImpl;
 import com.dosirak.ksh.service.MemberService;
 import com.dosirak.ksh.service.MemberServiceImpl;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import com.dosirak.common.vo.ProductVO;
+
 
 
 
 public class SqlTest {
 	public static void main(String[] args) {
+
+
+		/*
+		 * ProductService svc = new ProductServiceImpl(); List<ProductVO> pList =
+		 * svc.productList(); for(ProductVO pvo : pList) {System.out.println(pvo);}
+		 */
+		
+//		List<Map<String,String>> maincat = svc.getMainCat();
+
+
 		
 //		MemberService msvc = new MemberServiceImpl();
 //		System.out.println(msvc.getMember("jsb0820"));
@@ -49,6 +67,7 @@ public class SqlTest {
 //		ProductService svc = new ProductServiceImpl();
 //		List<Map<String,String>> maincat = svc.getMainCat();
 //
+
 //		// 주문수 많은 순으로 상품코드 가져오는 코드
 //		List<Map<String,Integer>> bestsellers = svc.getBestSeller();  
 //		List<Integer> bestItems = new ArrayList<>();

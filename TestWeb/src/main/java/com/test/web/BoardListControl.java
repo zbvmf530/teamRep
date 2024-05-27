@@ -12,7 +12,7 @@ public class BoardListControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String path = "views/"
+		String path = "views/";
 		
 		
 

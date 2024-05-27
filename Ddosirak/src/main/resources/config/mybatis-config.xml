@@ -22,6 +22,9 @@
   
   <!-- 각자 사용할 매퍼들 아래와같이 경로 지정해주세요. -->
   <mappers>
+
+    <mapper resource="com/dosirak/kst/mapper/ProductMapper.xml"/>
+
     <mapper resource="com/dosirak/jsb/mapper/ProductMapper.xml"/>
     <mapper resource="com/dosirak/jsb/mapper/OrderMapper.xml"/>
     <mapper resource="com/dosirak/jsb/mapper/OrderDetailMapper.xml"/>
@@ -30,5 +33,6 @@
     
     <mapper resource="com/dosirak/hjh/mapper/BoardMapper.xml"/>
     <mapper resource="com/dosirak/hjh/mapper/ReplyMapper.xml"/>
+
   </mappers>
 </configuration>
