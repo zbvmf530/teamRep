@@ -74,4 +74,25 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 
+	@Override
+	public List<Map<Integer, String>> getReview(int code) {
+		// TODO Auto-generated method stub
+		return mapper.getReview(code);
+	}
+
+
+	@Override
+	public int getReviewCnt(int code) {
+		// TODO Auto-generated method stub
+		return mapper.getReviewCnt(code);
+	}
+
+
+	@Override
+	public double getGradeAvg(int code) {
+		// TODO Auto-generated method stub
+		return mapper.getGradeAvg(code);
+	}
+
+
 }

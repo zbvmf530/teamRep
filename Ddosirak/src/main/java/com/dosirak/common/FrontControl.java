@@ -85,7 +85,11 @@ Map<String, Control> map;
 		
 		// 상품관련
 		map.put("/productlist.do", new ProductListControl());
-		map.put("/productDetail.do", new ProductDetailControl());	}
+		map.put("/productDetail.do", new ProductDetailControl());
+		
+		
+	
+	}
 	
 	// service
 	@Override

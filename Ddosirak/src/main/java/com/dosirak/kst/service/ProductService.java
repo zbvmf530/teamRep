@@ -15,4 +15,7 @@ public interface ProductService {
 	List<String> getOptionsForProduct(int code);
 	String getName(int code);
 	List<Map<String, Integer>> getOptionPricesForProduct(int code);
+	List<Map<Integer, String>> getReview(int code);
+	int getReviewCnt(int code);
+	double getGradeAvg(int code);
 }
