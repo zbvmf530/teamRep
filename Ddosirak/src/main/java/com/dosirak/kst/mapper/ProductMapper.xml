@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dosirak.kst.mapper.ProductMapper">
+	<select id="productList" resultType="com.dosirak.common.vo.ProductVO"
+		parameterType="String"> select * from tbl_products where main_category =
+		'${mainCategory}' order by product_code
+	</select>
+	<select id="getMainCategory" resultType="hashmap"> select MAIN_CATEGORY,
+		count(1) from tbl_products group by main_category order by
+		main_category
+	</select>
+	<select id="getSubCategory" parameterType="string"
+		resultType="string"> select sub_category from tbl_products where main_category
+		= '${value}'
+	</select>
+	<select id="getBestSeller" resultType="hashmap"> select product_code,
+		count(1) from tbl_details group by product_code order by 2 desc
+	</select>
+	<select id="getProduct" parameterType="int"
+		resultType="com.team.vo.ProductVO"> select * from tbl_products where
+		product_code=${productCode}
+	</select>
+	<select id="getOptions" parameterType="int" resultType="String"> select
+		o.option_name from tbl_products p join tbl_options o on p.product_code
+		= o.product_code where p.product_code = ${productCode}
+	</select>
+	<select id="getName" parameterType="int" resultType="String"> select
+		product_name from tbl_products where product_code = ${productCode}
+	</select>
+	<select id="getPrice" parameterType="int" resultType="map"> select
+		option_name, option_price from tbl_options where product_code =
+		#{productCode}
+	</select>
+</mapper>

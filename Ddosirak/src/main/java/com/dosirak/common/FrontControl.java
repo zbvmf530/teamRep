@@ -31,6 +31,8 @@ import com.dosirak.ksh.web.LogOutControl;
 import com.dosirak.ksh.web.SignupForm;
 import com.dosirak.ksh.web.tLoginControl;
 import com.dosirak.ksh.web.tLoginForm;
+import com.dosirak.kst.web.ProductDetailControl;
+import com.dosirak.kst.web.ProductListControl;
 
 
 
@@ -80,7 +82,10 @@ Map<String, Control> map;
 		map.put("/removeReply.do", new RemoveReplyControl());// 댓글삭제
 		map.put("/addReply.do", new AddReplyControl()); // 댓글작성
 		map.put("/getTotalCnt.do", new TotalCountControl()); // 댓글갯수
-	}
+		
+		// 상품관련
+		map.put("/productlist.do", new ProductListControl());
+		map.put("/productDetail.do", new ProductDetailControl());	}
 	
 	// service
 	@Override

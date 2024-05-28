@@ -6,7 +6,8 @@
 
   <!--     select * from tbl_boards2 -->
   <!--     order by board_no -->
-  <select id="boardList" resultType="com.dosirak.common.vo.BoardVO">
+ 
+ <select id="boardList" resultType="com.dosirak.common.vo.BoardVO">
      select *
      from tbl_boards2 b
   </select>
