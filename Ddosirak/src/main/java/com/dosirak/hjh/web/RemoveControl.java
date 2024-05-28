@@ -17,18 +17,22 @@ public class RemoveControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	String bno = req.getParameter("bno");
 		
-		BoardVO vo = new BoardVO();
-	
+		BoardService svc = new BoardServiceImpl();
+		BoardVO vo = svc.getBoard(Integer.parseInt(bno)); 
+		String path = "board/deleteBoard.tiles";
 		vo.setBoardNo(Integer.parseInt(bno));
 	
-		BoardService svc = new BoardServiceImpl();
+		
+		System.out.println("번호"+bno);
 		if(svc.delBoard(vo)){
 			System.out.println("삭제성공");
 			resp.sendRedirect("boardList.do");
+			return;
 		}else {
 			System.out.println("삭제실패");
+			resp.sendRedirect("boardInfo.do");
 		}
-	
+		req.getRequestDispatcher(path).forward(req, resp);
 
 	}
 

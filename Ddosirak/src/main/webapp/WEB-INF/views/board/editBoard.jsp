@@ -27,8 +27,8 @@
 			<td colspan="2">
 <%-- 			<c:choose> --%>
 <%-- 					<c:when test="${bno.memberId eq logId}"> --%>
-						<input class="btn btn-primary" type="submit" value="수정">
-<%-- 					</c:when> --%>
+						<button class="btn btn-primary" onclick="location.href='/updateBoard.do?${bno.boardNo}'">수정</button>
+						<%-- 					</c:when> --%>
 <%-- 					<c:otherwise> --%>
 <!-- 						<input class="btn btn-primary" disabled type="submit" value="수정"> -->
 <%-- 					</c:otherwise> --%>

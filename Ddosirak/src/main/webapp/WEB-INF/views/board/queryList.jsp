@@ -36,7 +36,7 @@
 
 <h3>문의하기</h3>
 
-
+<div class = "row">
 
 <!-- 글번호, 제목, 작성자, 작성일시, 조회수 -->
 <table class = "table">
@@ -79,9 +79,11 @@
 	</c:forEach>
 	</tbody>
 </table>
+</div>
 <my:paging pageInfo="${paging }"></my:paging>
-	<button class = "col-sm-3" id = "addBoard" onclick ="location.href='addBoard.do'">글쓰기</button>
-<div class="center">
+	<div class = "row"><button class = "col-sm-3" id = "addBoard" onclick="location.href='addBoard.do'">글쓰기</button></div>
+	
+<div class="row">
 	<form action="boardList.do">
 		<div class="row">
 			<div class="col-sm-4">
@@ -105,6 +107,11 @@
 
 
 </div>
+    <script>
+	const totalList = JSON.parse('${json}');
+	const logid = '${logId}';
+	const auth = '${auth}';
+</script>
 
 
 
