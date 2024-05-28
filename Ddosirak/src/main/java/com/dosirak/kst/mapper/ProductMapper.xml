@@ -50,6 +50,6 @@
 	<select id="getGradeAvg" parameterType="int" resultType="int">
 		select avg(grade) from tbl_reviews
 		where product_code=#{productCode}
-		group by product_code;
+		group by product_code
 	</select>
 </mapper>
