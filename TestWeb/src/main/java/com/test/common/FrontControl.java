@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.test.web.BoardListControl;
 import com.test.web.MainControl;
+import com.test.web.ShopControl;
 
 
 
@@ -32,6 +33,7 @@ Map<String, Control> map;
 		map.put("/main.do", new MainControl());
 		map.put("/board.do", new BoardListControl());
 		System.out.println("컨트롤 실행!");
+		map.put("/shop.do", new ShopControl());
 		/*
 		 * map.put("/addForm.do", new AddFormControl()); //글등록화면 map.put("/addBoard.do",
 		 * new AddBoardControl()); map.put("/boardInfo.do", new BoardInfoControl());
