@@ -12,6 +12,7 @@ document.querySelector('#modBtn').addEventListener('click', function() {
 document.querySelector('#delBtn').addEventListener('click', function() {
 	if(confirm("삭제하시겠습니까?")== true){
 		document.forms.myFrm.action = "deleteBoard.do";
+//		alert('삭제되었습니다'); //삭제화면 호출
 		alert('삭제되었습니다'); //삭제화면 호출
 	}
 	
