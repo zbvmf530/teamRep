@@ -18,6 +18,8 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.bundle.css" />
     
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- Title -->
     <title>DDosirak</title>
   </head>
@@ -40,6 +42,7 @@
     <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
     <script src="./js/navmenu.js"></script>
     <script src="./js/test.js"></script>
     

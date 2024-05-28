@@ -27,7 +27,8 @@ public class ModifyControl implements Control {
 		String page = req.getParameter("page");
 		String sc = req.getParameter("searchCondition");
 		String kw = req.getParameter("keyword");
-		
+	
+
 		BoardVO vo = new BoardVO();
 		SearchVO svo = new SearchVO();
 	

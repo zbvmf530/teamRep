@@ -2,7 +2,7 @@
  * board.js
  */
 //수정버튼
-document.querySelector('#modBtn').addEventListener('click', function() {
+document.querySelector('#modBtn').addEventListener('click', function() {	
 	document.forms.myFrm.action = "modBoardForm.do"; //수정화면 호출
 	document.forms.myFrm.submit();
 })
@@ -10,8 +10,12 @@ document.querySelector('#modBtn').addEventListener('click', function() {
 
 //삭제버튼
 document.querySelector('#delBtn').addEventListener('click', function() {
-	document.forms.myFrm.action = "delBoardForm.do"; //삭제화면 호출
-	document.forms.myFrm.submit();
+	if(confirm("삭제하시겠습니까?")== true){
+		document.forms.myFrm.action = "deleteBoard.do";
+//		alert('삭제되었습니다'); //삭제화면 호출
+		alert('삭제되었습니다'); //삭제화면 호출
+	}
+	
 })
 
 //댓글목록 출력

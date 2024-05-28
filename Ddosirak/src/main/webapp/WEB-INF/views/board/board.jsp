@@ -24,7 +24,7 @@ div.reply span {
 </style>
 
 <link href="css/paging.css" rel="stylesheet" />
-<link href="css/modal.css" rel="stylesheet" />
+
 
 <h2>상세화면</h2>
 
@@ -40,7 +40,7 @@ div.reply span {
 			<input type="hidden" name="page" value="${page }">
 			<input type="hidden" name="searchCondition" value="${searchCondition }">
 			<input type="hidden" name="keyword" value="${keyword }">
-		</form>
+	
 		<table class="table">
 			<tr>
 				<th>제목</th>
@@ -67,6 +67,7 @@ div.reply span {
 				</td>
 			</tr>
 		</table>
+			</form>
 	</c:otherwise>
 </c:choose>
 

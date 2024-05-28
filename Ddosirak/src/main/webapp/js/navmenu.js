@@ -5,7 +5,8 @@
  $(document).ready(initNavBar);
  
  function initNavBar(){
-	
+	//console.log($('a[id="notice"]'));
+	//console.log($('a[id="qna"]'));	
 	makeCategory();
 	let json = encodeURIComponent(JSON.stringify(totalList));
 	let menuItems = $(document).find($('div[id="loginMenu"] ul')).find('li');
@@ -27,7 +28,7 @@
 	$.each(menuItems,function(idx,item){
 		//console.log(item);
 		
-		console.log($(item).find($('a')));
+//		console.log($(item).find($('a')));
 		$(item).find($('a')).text(menutexts[idx]);
 		if(menutexts[idx]=='로그인'){$(item).find($('a')).prop('href',`tloginForm.do?navmenu=${json}`)}
 		else if(menutexts[idx]=='로그아웃'){$(item).find($('a')).prop('href',`logout.do?navmenu=${json}`)}
@@ -44,7 +45,8 @@
 	$(document).find($('a[id="notice"]')).prop('href',`boardList.do?navmenu=${json}`);
 	//page searchCondition keyword
 	$(document).find($('a[id="qna"]')).prop('href',`queryList.do?navmenu=${json}`);
-	
+	//svc.getnavMenu(result=>{console.log(result)});
+	$('a[id="cartButton"]').prop('href',`cartpage.do?navmenu=${json}`);
  }
  
  function listPage(e){

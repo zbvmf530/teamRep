@@ -18,12 +18,13 @@ import com.dosirak.hjh.web.BoardListControl;
 import com.dosirak.hjh.web.ModBoardFormControl;
 import com.dosirak.hjh.web.ModifyControl;
 import com.dosirak.hjh.web.RemoveControl;
-import com.dosirak.hjh.web.RemoveFormControl;
 import com.dosirak.hjh.web.RemoveReplyControl;
 import com.dosirak.hjh.web.ReplyListControl;
 import com.dosirak.hjh.web.TotalCountControl;
 import com.dosirak.hjh.web.queryListControl;
+import com.dosirak.jsb.web.CartControl;
 import com.dosirak.jsb.web.MainControl;
+import com.dosirak.jsb.web.MenuControl;
 import com.dosirak.jsb.web.MypageControl;
 import com.dosirak.ksh.web.AddMemberControl;
 import com.dosirak.ksh.web.IdCheck;
@@ -52,9 +53,13 @@ Map<String, Control> map;
 	public void init(ServletConfig config) throws ServletException {
 		// 메인페이지
 		map.put("/main.do", new MainControl());
-		
+		// 메뉴 구성
+		map.put("/menuList.do", new MenuControl());
 		// 마이페이지
 		map.put("/mypage.do", new MypageControl());
+		
+		// 장바구니 페이지
+		map.put("/cartpage.do", new CartControl());
 		
 		// 로그인, 회원가입 관련 콘트롤
 		map.put("/tloginForm.do", new tLoginForm());
@@ -74,7 +79,6 @@ Map<String, Control> map;
 		map.put("/modBoardForm.do", new ModBoardFormControl()); // 수정화면
 		map.put("/updateBoard.do", new ModifyControl()); // 수정
 		// 삭제관련
-		map.put("/delBoardForm.do", new RemoveFormControl());
 		map.put("/deleteBoard.do", new RemoveControl());
 
 		// 댓글관련
