@@ -44,7 +44,8 @@ public class queryListControl implements Control {
 		req.setAttribute("paging", pageDTO);
 		req.setAttribute("searchCondition", sc);
 		req.setAttribute("keyword", kw);
-
+		
+		req.setAttribute("json", req.getParameter("navmenu"));
 		req.getRequestDispatcher(path).forward(req, resp);
 	
 

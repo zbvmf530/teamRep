@@ -7,7 +7,9 @@
 				<a class="text-body" id = "notice" href="./boardList.do">
 		          공지사항
 		        </a>
+
 		        <a class="text-body" id = "qna"href="./queryList.do">
+
 		          Q&A
 		        </a>
 		</div>
@@ -18,7 +20,7 @@
       <div class="container">
     
         <!-- Brand -->
-        <a class="navbar-brand" href="./overview.html">
+        <a class="navbar-brand" href="main.do">
           DDosirak.
         </a>
     
