@@ -19,7 +19,7 @@
 		count(1) from tbl_details group by product_code order by 2 desc
 	</select>
 	<select id="getProduct" parameterType="int"
-		resultType="com.team.vo.ProductVO"> select * from tbl_products where
+		resultType="com.dosirak.common.vo.ProductVO"> select * from tbl_products where
 		product_code=${productCode}
 	</select>
 	<select id="getOptions" parameterType="int" resultType="String"> select
