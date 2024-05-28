@@ -9,9 +9,12 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.dosirak.common.DataSource;
 import com.dosirak.common.vo.OrderDetailVO;
 import com.dosirak.common.vo.OrderVO;
 import com.dosirak.common.vo.ProductVO;
+import com.dosirak.common.vo.SearchVO;
+import com.dosirak.hjh.mapper.BoardMapper;
 import com.dosirak.jsb.service.OrderDetailService;
 import com.dosirak.jsb.service.OrderDetailServiceImpl;
 import com.dosirak.jsb.service.OrderService;
@@ -23,29 +26,28 @@ import com.dosirak.ksh.service.MemberServiceImpl;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-
-
 public class SqlTest {
 	public static void main(String[] args) {
-		
+
 //		MemberService msvc = new MemberServiceImpl();
 //		System.out.println(msvc.getMember("jsb0820"));
-		
+
 		OrderService svc = new OrderServiceImpl();
 		OrderDetailService dsvc = new OrderDetailServiceImpl();
-		
+
 		String userId = "jsb0820";
-		
-		List<OrderVO> ovo = svc.getOrderList(userId);
-		
-		ovo.forEach(item->{
-			System.out.println(item);
-			System.out.println("----------------");
-			List<OrderDetailVO> detailList = dsvc.getOrderDetail(item);
-			
-			detailList.forEach(detail->{System.out.println(detail);});
-			});
-		
+
+		SqlSession session = DataSource.getInstance().openSession(true);
+		BoardMapper mapper = session.getMapper(BoardMapper.class);
+
+		SearchVO search = new SearchVO();
+		search.setBoardType("Q");
+		search.setPage(1);
+		search.setKeyword("결제");
+		search.setSearchCondition("T");
+
+		mapper.boardListPaging(search).forEach(System.out::println);
+
 //		ProductService svc = new ProductServiceImpl();
 //		List<Map<String,String>> maincat = svc.getMainCat();
 //
@@ -77,7 +79,6 @@ public class SqlTest {
 //		Gson gson = new GsonBuilder().create();
 //		String json = gson.toJson(TotalList);
 //		System.out.println(json);
-	
-		
+
 	}
 }

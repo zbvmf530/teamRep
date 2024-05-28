@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class SearchVO {
 
+	private String boardType; // 공지사항(N)/ 문의(Q)
 	private int page;
 	private String searchCondition;
 	private String keyword;

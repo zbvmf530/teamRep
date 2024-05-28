@@ -32,11 +32,14 @@ public class AddBoardControl implements Control {
 //		vo.setMemberId(memberId);
 		vo.setCategory(category);
 		
+	
 
 		
 		if(svc.addBoard(vo)){
 			System.out.println("등록성공");
-			resp.sendRedirect("boardList.do");
+		
+				resp.sendRedirect("boardList.do");			
+			
 			
 		}else {
 			System.out.println("등록실패");

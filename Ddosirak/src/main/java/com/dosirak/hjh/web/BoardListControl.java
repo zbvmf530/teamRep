@@ -25,11 +25,13 @@ public class BoardListControl implements Control {
 		String page = req.getParameter("page");
 		String sc = req.getParameter("searchCondition");
 		String kw = req.getParameter("keyword");
-		
+		String type = req.getParameter("boardType");
+
 		page = page == null ? "1" : page;
 		search.setPage(Integer.parseInt(page));
 		search.setKeyword(kw);
 		search.setSearchCondition(sc);
+		search.setBoardType(type);
 
 		BoardService svc = new BoardServiceImpl();
 
@@ -45,7 +47,8 @@ public class BoardListControl implements Control {
 		req.setAttribute("paging", pageDTO);
 		req.setAttribute("searchCondition", sc);
 		req.setAttribute("keyword", kw);
-		
+		req.setAttribute("boardType", type);
+
 		String json = req.getParameter("navmenu");
 		req.setAttribute("json", json);
 		System.out.println(json);
