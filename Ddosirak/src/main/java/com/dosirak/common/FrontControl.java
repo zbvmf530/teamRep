@@ -24,6 +24,7 @@ import com.dosirak.hjh.web.ReplyListControl;
 import com.dosirak.hjh.web.TotalCountControl;
 import com.dosirak.hjh.web.queryListControl;
 import com.dosirak.jsb.web.MainControl;
+import com.dosirak.jsb.web.MenuControl;
 import com.dosirak.jsb.web.MypageControl;
 import com.dosirak.ksh.web.AddMemberControl;
 import com.dosirak.ksh.web.IdCheck;
@@ -52,7 +53,8 @@ Map<String, Control> map;
 	public void init(ServletConfig config) throws ServletException {
 		// 메인페이지
 		map.put("/main.do", new MainControl());
-		
+		// 메뉴 구성
+		map.put("/menuList.do", new MenuControl());
 		// 마이페이지
 		map.put("/mypage.do", new MypageControl());
 		
