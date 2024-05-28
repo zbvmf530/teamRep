@@ -46,7 +46,7 @@
 	//page searchCondition keyword
 	$(document).find($('a[id="qna"]')).prop('href',`queryList.do?navmenu=${json}`);
 	//svc.getnavMenu(result=>{console.log(result)});
-	
+	$('a[id="cartButton"]').prop('href',`cartpage.do?navmenu=${json}`);
  }
  
  function listPage(e){
