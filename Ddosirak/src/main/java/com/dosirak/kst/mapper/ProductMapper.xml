@@ -47,7 +47,7 @@
 		count(*) from tbl_reviews
 		where product_code=#{productCode}
 	</select>
-	<select id="getGradeAvg" parameterType="int" resultType="int">
+	<select id="getGradeAvg" parameterType="int" resultType="double">
 		select avg(grade) from tbl_reviews
 		where product_code=#{productCode}
 		group by product_code

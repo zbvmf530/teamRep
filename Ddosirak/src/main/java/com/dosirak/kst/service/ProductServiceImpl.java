@@ -53,24 +53,10 @@ public class ProductServiceImpl implements ProductService{
 		return mapper.productList(main_category);
 	}
 
-
-	@Override
-	public List<String> getOptionsForProduct(int code) {
-		return mapper.getOptions(code);
-	}
-
-
 	@Override
 	public String getName(int code) {
 		// TODO Auto-generated method stub
 		return mapper.getName(code);
-	}
-
-
-	@Override
-	public List<Map<String, Integer>> getOptionPricesForProduct(int code) {
-		// TODO Auto-generated method stub
-		return mapper.getPrice(code);
 	}
 
 
@@ -92,6 +78,20 @@ public class ProductServiceImpl implements ProductService{
 	public double getGradeAvg(int code) {
 		// TODO Auto-generated method stub
 		return mapper.getGradeAvg(code);
+	}
+
+
+	@Override
+	public List<Map<String, Integer>> getOptionPricesForProduct(int code) {
+		// TODO Auto-generated method stub
+		return mapper.getOptions(code);
+	}
+
+
+	@Override
+	public List<Map<String, Integer>> getOptionsForProduct(int code) {
+		// TODO Auto-generated method stub
+		return mapper.getOptions(code);
 	}
 
 

@@ -23,13 +23,14 @@ public class ProductDetailControl implements Control {
 		
 		ProductService svc = new ProductServiceImpl();
 		
-	    List<String> optionList = svc.getOptionsForProduct(code);
+	    List<Map<String, Integer>> optionList = svc.getOptionsForProduct(code);
 	    String prodName = svc.getName(code);
 	    List<Map<String, Integer>> prodPrice = svc.getOptionPricesForProduct(code);
 	    List<Map<Integer, String>> review = svc.getReview(code);
 	    int reviewCnt = svc.getReviewCnt(code);
 	    double gradeAvg = svc.getGradeAvg(code);
 	    
+	    req.setAttribute("code", code);
 	    req.setAttribute("reviewCnt", reviewCnt);
 		req.setAttribute("optionList", optionList);
 		req.setAttribute("name", prodName);
