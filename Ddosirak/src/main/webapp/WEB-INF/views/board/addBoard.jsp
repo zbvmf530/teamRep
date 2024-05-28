@@ -8,21 +8,22 @@
 <%-- </c:if> --%>
 
 <form action="addBoard.do" method="post">
+
 	<p> 선택 </p>
 		
 			<select name="selectCategory" class="form-control">
 				<option value="상품문의" ${selectCategory == '상품문의' ? 'selected' : ''}>상품문의</option>
-				<option value="결제문의" ${selectCategory == '결제' ? 'selected' : ''}>결제</option>
-				<option value="배송문의" ${selectCategory == '배송' ? 'selected' : ''}>배송</option>
-				<option value="교환/반품문의" ${selectCategory == '교환/반품' ? 'selected' : ''}>교환/반품</option>
+				<option value="결제문의" ${selectCategory == '결제문의' ? 'selected' : ''}>결제문의</option>
+				<option value="배송문의" ${selectCategory == '배송문의' ? 'selected' : ''}>배송문의</option>
+				<option value="교환/반품문의" ${selectCategory == '교환/반품문의' ? 'selected' : ''}>교환/반품문의</option>
 			</select>
 
 	
 	<table class="table">
-		<tr>
-			<th>작성자</th>
-			<td><input type="hidden" name="memberId" readonly value="${memberId }"></td>
-		</tr>
+<!-- 		<tr> -->
+<!-- 			<th>작성자</th> -->
+<%-- 			<td><input type="hidden" name="memberId" readonly value="${memberId }"></td> --%>
+<!-- 		</tr> -->
 		<tr>
 			<th>제목</th>
 			<td><input type="text" name="boardTitle"></td>
@@ -40,7 +41,4 @@
 			</tr>
 	</table>
 	</form>
-
-
-
 

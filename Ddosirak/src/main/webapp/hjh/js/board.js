@@ -15,7 +15,7 @@ document.querySelector('#delBtn').addEventListener('click', function() {
 })
 
 //댓글목록 출력
-
+console.log('bno:' + bno);
 let page = 1;
 showList();
 function showList() {

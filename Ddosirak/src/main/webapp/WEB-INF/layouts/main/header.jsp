@@ -7,7 +7,7 @@
 				<a class="text-body" id = "notice" href="./boardList.do">
 		          공지사항
 		        </a>
-		        <a class="text-body" id = "qna"href="./overview.html">
+		        <a class="text-body" id = "qna" href="./queryList.do">
 		          Q&A
 		        </a>
 		</div>

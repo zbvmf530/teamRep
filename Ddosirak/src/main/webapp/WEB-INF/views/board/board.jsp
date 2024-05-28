@@ -62,8 +62,8 @@ div.reply span {
 			</tr>
 			<tr align="center">
 				<td colspan="4">
-				<button class="btn btn-danger" id="delBtn">삭제</button>
 				<button class="btn btn-primary" id="modBtn">수정</button>
+				<button class="btn btn-danger" id="delBtn">삭제</button>
 				</td>
 			</tr>
 		</table>

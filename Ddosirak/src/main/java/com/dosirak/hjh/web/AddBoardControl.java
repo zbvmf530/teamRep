@@ -25,28 +25,29 @@ public class AddBoardControl implements Control {
 		String path = "board/addBoard.tiles";
 		BoardService svc = new BoardServiceImpl();
 		
-		req.getRequestDispatcher(path).forward(req, resp);
 		
-		BoardVO vo = new BoardVO();
-		vo.setBoardTitle(title);
-		vo.setBoardContent(content);
+		BoardVO board = new BoardVO();
+		board.setBoardTitle(title);
+		board.setBoardContent(content);
 //		vo.setMemberId(memberId);
-		vo.setCategory(category);
+		board.setCategory(category);
 		
 		System.out.println("제목"+title);
 		System.out.println("내용"+content);
-		System.out.println("카테"+category);
+		System.out.println("카테고리"+category);
 	
 		
-		if(svc.addBoard(vo)){
+		if(svc.addBoard(board)){
 			System.out.println("등록성공");
-//			resp.sendRedirect("boardList.do");
+			resp.sendRedirect("boardList.do");
+			return;
 						
 		
 		}else {
 			System.out.println("등록실패");
 		}
 	
+		req.getRequestDispatcher(path).forward(req, resp);
 	}
 
 }

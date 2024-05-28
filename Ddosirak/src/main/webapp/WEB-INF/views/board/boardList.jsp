@@ -34,7 +34,7 @@
 .pagination a:hover:not(.active) {background-color: #ddd;}
 </style>
 
-<h3>문의하기</h3>
+<h3>공지사항</h3>
 
 
 <div class = "row">
@@ -54,7 +54,7 @@
 	<tbody>
 	<c:forEach var="board" items="${boardList }">
 		<c:choose>
-				<c:when test="${board.category ne '공지사항'}">
+				<c:when test="${board.category eq '공지사항'}">
 		<tr>
 			<td>${board.boardNo }</td>
 			<td>${board.category }</td>
@@ -81,7 +81,7 @@
 </table>
 </div>
 <my:paging pageInfo="${paging }"></my:paging>
-<div class = "row"><button class = "col-sm-3" id = "addBoard" onclick ="location.href='addBoard.do'">글쓰기</button></div>
+<div class = "row"><button class = "col-sm-3" id = "addBoard" onclick ="location.href='addForm.do'">글쓰기</button></div>
 	
 <div class="row">
 	<form action="boardList.do">
