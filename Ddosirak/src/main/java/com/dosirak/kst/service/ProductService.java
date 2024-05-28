@@ -12,7 +12,7 @@ public interface ProductService {
 	List<Map<String,String>> getMainCat();
 	List<String> getSubCat(String mainCat);
 	List<Map<String,Integer>> getBestSeller();
-	List<String> getOptionsForProduct(int code);
+	List<Map<String, Integer>> getOptionsForProduct(int code);
 	String getName(int code);
 	List<Map<String, Integer>> getOptionPricesForProduct(int code);
 	List<Map<Integer, String>> getReview(int code);

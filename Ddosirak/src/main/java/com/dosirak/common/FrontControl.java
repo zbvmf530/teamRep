@@ -24,6 +24,9 @@ import com.dosirak.hjh.web.RemoveControl;
 import com.dosirak.hjh.web.RemoveReplyControl;
 import com.dosirak.hjh.web.ReplyListControl;
 import com.dosirak.hjh.web.TotalCountControl;
+
+import com.dosirak.jsb.web.CartControl;
+
 import com.dosirak.jsb.web.MainControl;
 import com.dosirak.jsb.web.MenuControl;
 import com.dosirak.jsb.web.MypageControl;
@@ -58,6 +61,9 @@ Map<String, Control> map;
 		map.put("/menuList.do", new MenuControl());
 		// 마이페이지
 		map.put("/mypage.do", new MypageControl());
+		
+		// 장바구니 페이지
+		map.put("/cartpage.do", new CartControl());
 		
 		// 로그인, 회원가입 관련 콘트롤
 		map.put("/tloginForm.do", new tLoginForm());
