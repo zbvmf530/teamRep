@@ -27,7 +27,7 @@ public class ModifyControl implements Control {
 		String page = req.getParameter("page");
 		String sc = req.getParameter("searchCondition");
 		String kw = req.getParameter("keyword");
-	
+		String category = req.getParameter("category");
 
 		BoardVO vo = new BoardVO();
 		SearchVO svo = new SearchVO();
@@ -39,6 +39,8 @@ public class ModifyControl implements Control {
 		svo.setKeyword(kw);
 		svo.setPage(Integer.parseInt(page));
 		svo.setSearchCondition(sc);
+		vo.setCategory(category);
+		
 		BoardService svc = new BoardServiceImpl();
 		req.setAttribute("bno", vo);
 		req.setAttribute("boardTitle", title);
@@ -46,12 +48,19 @@ public class ModifyControl implements Control {
 		req.setAttribute("page", page);
 		req.setAttribute("searchCondition", sc);
 		req.setAttribute("keyword", kw);
-		
 		String encodekw = URLEncoder.encode(kw, "utf-8"); //한글 encoding 처리
 		
 		if(svc.modifyBoard(vo)){
 			System.out.println("수정성공");
-			resp.sendRedirect("boardList.do");
+			if (category.equals("공지사항")) {
+				System.out.println("공지"+category);
+				resp.sendRedirect("./boardInfo.do?bno="+bno);
+				return;
+			} else{
+				System.out.println("카테"+category);
+				resp.sendRedirect("./boardInfo.do?bno="+bno);
+				return;
+			}
 		
 		}else {
 			System.out.println("수정실패");

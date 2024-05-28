@@ -9,16 +9,26 @@
 
 <form action="addBoard.do" method="post">
 
-	<table class="table">
 <!-- 		<tr> -->
 <!-- 			<th>작성자</th> -->
 <%-- 			<td><input type="hidden" name="memberId" readonly value="${memberId }"></td> --%>
 <!-- 		</tr> -->
-	<tr>
-			<th>카테고리</th>
-		<td><input type="hidden" name="selectCategory" readonly value="공지사항">공지사항</td>
-		</tr>
 
+			<p>카테고리</p>
+			
+			<select name="selectCategory" class="form-control">
+				<option value="공지사항" ${selectCategory == '공지사항' ? 'selected' : ''}>공지사항</option>
+				<option value="상품문의" ${selectCategory == '상품문의' ? 'selected' : ''}>상품문의</option>
+				<option value="결제문의" ${selectCategory == '결제문의' ? 'selected' : ''}>결제문의</option>
+				<option value="배송문의" ${selectCategory == '배송문의' ? 'selected' : ''}>배송문의</option>
+				<option value="교환/반품문의" ${selectCategory == '교환/반품문의' ? 'selected' : ''}>교환/반품문의</option>
+			</select>
+		
+			
+	<table class="table">
+		
+	
+	
 
 		<tr>
 			<th>제목</th>

@@ -38,6 +38,7 @@
 
 	</table>
 	<input type="hidden" name="bno" value="${bno.boardNo }"> 
+	<input type="hidden" name="category" value="${bno.category }"> 
 	<input type="hidden" name="page" value="${page }">
     <input type="hidden" name="searchCondition" value="${searchCondition }">
 	<input type="hidden" name="keyword" value="${keyword }">

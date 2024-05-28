@@ -12,14 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dosirak.hjh.web.AddBoardControl;
 import com.dosirak.hjh.web.AddFormControl;
-import com.dosirak.hjh.web.AddQueryControl;
-import com.dosirak.hjh.web.AddQueryFormControl;
 import com.dosirak.hjh.web.AddReplyControl;
 import com.dosirak.hjh.web.BoardInfoControl;
 import com.dosirak.hjh.web.BoardListControl;
 import com.dosirak.hjh.web.ModBoardFormControl;
 import com.dosirak.hjh.web.ModifyControl;
-import com.dosirak.hjh.web.QueryInfoControl;
 import com.dosirak.hjh.web.RemoveControl;
 import com.dosirak.hjh.web.RemoveReplyControl;
 import com.dosirak.hjh.web.ReplyListControl;
@@ -73,18 +70,12 @@ Map<String, Control> map;
 		map.put("/check.do", new IdCheck());
 		map.put("/logout.do", new LogOutControl());
 		
-		//공지사항 관련 콘트롤
+		//공지사항,문의사항 관련 콘트롤
 		map.put("/boardList.do", new BoardListControl()); // 공지사항목록
 		map.put("/addForm.do", new AddFormControl()); // 글등록 화면
 		map.put("/addBoard.do", new AddBoardControl()); // 글등록 기능
 		map.put("/boardInfo.do", new BoardInfoControl()); // 상세보기화면
 
-		//문의사항 관련 콘트롤
-	
-		map.put("/addQForm.do", new AddQueryFormControl()); // 글등록 화면
-		map.put("/addQuery.do", new AddQueryControl()); // 글등록 기능
-		map.put("/queryInfo.do", new QueryInfoControl()); // 상세보기화면
-		
 		//게시글 수정 삭제 
 		map.put("/modBoardForm.do", new ModBoardFormControl()); // 수정화면
 		map.put("/updateBoard.do", new ModifyControl()); // 수정

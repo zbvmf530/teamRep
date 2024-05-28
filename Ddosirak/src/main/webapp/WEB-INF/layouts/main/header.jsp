@@ -7,7 +7,7 @@
     <a class="text-body" id="notice" href="./boardList.do?boardType=N">
       공지사항
     </a>
-    <a class="text-body" id="qna" href="./queryList.do?boardType=Q">
+    <a class="text-body" id="qna" href="./boardList.do?boardType=Q">
       Q&A
     </a>
   </div>

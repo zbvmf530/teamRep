@@ -38,7 +38,15 @@ public class AddBoardControl implements Control {
 		if(svc.addBoard(vo)){
 			System.out.println("등록성공");
 		
-				resp.sendRedirect("boardList.do");			
+			if (category.equals("공지사항")) {
+				System.out.println("공지"+category);
+				resp.sendRedirect("./boardList.do?boardType=N");
+				return;
+			} else{
+				System.out.println("카테"+category);
+				resp.sendRedirect("./boardList.do?boardType=Q");
+				return;
+			}	
 			
 			
 		}else {

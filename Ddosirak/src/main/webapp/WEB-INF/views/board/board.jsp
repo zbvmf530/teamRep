@@ -37,6 +37,7 @@ div.reply span {
 	<c:otherwise>
 		<form name="myFrm">
 			<input type="hidden" name="bno" value="${result.boardNo }">
+			<input type="hidden" name="category" value="${result.category }">
 			<input type="hidden" name="page" value="${page }">
 			<input type="hidden" name="searchCondition" value="${searchCondition }">
 			<input type="hidden" name="keyword" value="${keyword }">
