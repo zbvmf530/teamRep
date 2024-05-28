@@ -7,10 +7,10 @@ import com.dosirak.common.vo.SearchVO;
 
 
 
-public interface BoardMapper {
+public interface QueryMapper {
 
-	List<BoardVO> boardList(SearchVO search); //전체목록가져오기
-	List<BoardVO> boardListPaging(SearchVO search); //10개씩 리스트
+	List<BoardVO> boardList(); //전체목록가져오기
+	List<BoardVO> boardListPaging(SearchVO search); //5개씩 리스트
 
 	
 	int getTotalCnt(SearchVO search);

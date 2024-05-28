@@ -12,7 +12,6 @@ document.querySelector('#modBtn').addEventListener('click', function() {
 document.querySelector('#delBtn').addEventListener('click', function() {
 	if(confirm("삭제하시겠습니까?")== true){
 		document.forms.myFrm.action = "deleteBoard.do";
-//		alert('삭제되었습니다'); //삭제화면 호출
 		alert('삭제되었습니다'); //삭제화면 호출
 	}
 	
@@ -47,12 +46,14 @@ function showList() {
 //삭제버튼 이벤트
 function deleteRow(e) {
 	const rno = e.target.parentElement.parentElement.dataset.rno; //숫자 가져오기
-	console.log("삭제는"+rno);
+	console.log("삭제는" + rno);
 	svc.removeReply(rno,
 		result => {
 			if (result.retCode == 'OK') {
-				alert('삭제완료');
-				showList();
+				if (confirm("삭제하시겠습니까?") == true) {
+					alert('삭제되었습니다'); //삭제화면 호출
+					showList();
+				}
 			} else if (result.retCode == 'NG') {
 				alert('삭제실패')
 			} else {

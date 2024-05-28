@@ -11,7 +11,7 @@ public class PageDTO {
    private int startPage, endPage; // 시작페이지,마지막페이지.
    private boolean prev, next; // 이전, 이후 페이지 유무체크.
 
-   public PageDTO(int page, int totalCnt) {
+   	public PageDTO(int page, int totalCnt) {
       this.page = page;
       int realEnd = (int) Math.ceil(totalCnt / 10.0);
 

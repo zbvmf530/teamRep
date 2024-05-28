@@ -7,25 +7,9 @@
   <!--     select * from tbl_boards2 -->
   <!--     order by board_no -->
  
- <select id="boardList" resultType="com.dosirak.common.vo.BoardVO" parameterType="com.dosirak.common.vo.SearchVO">
-     select b.* 
-     from (select rownum rn, a.*
-           from (select *
-                 from tbl_boards2
-                 where 
-                 <choose>
-                   <when test="boardType == 'N'.toString() ">
-                     category = '공지사항'
-                   </when>
-                   <otherwise>
-                     category != '공지사항'
-                   </otherwise>
-                 </choose>
-                 order by board_no) a
-           <![CDATA[
-           where rownum <= (#{page}*10)) b
-           ]]>
-     where b.rn > (#{page}-1)*10
+ <select id="boardList" resultType="com.dosirak.common.vo.BoardVO">
+     select *
+     from tbl_boards2 b
   </select>
   
 
@@ -33,29 +17,22 @@
 	<select id="boardListPaging" parameterType="com.dosirak.common.vo.SearchVO">
 		select r.*
 		from( select rownum rn, a.*
-			from (select b.*, 
-			            (select count(1) from tbl_replyes2 r where r.board_no = b.board_no) as "reply_cnt"
-				  from tbl_boards2 b
-				  where 
-                 <choose>
-                   <when test="boardType == 'N'.toString() ">
-                     category = '공지사항'
-                   </when>
-                   <otherwise>
-                     category != '공지사항'
-                   </otherwise>
-                 </choose>
-				  <choose>
-				    <when test="searchCondition == 'T'.toString() ">
-				    and board_title like '%'||#{keyword}||'%'
-				    </when>
-				    <when test="searchCondition == 'W'.toString() ">
-				    and member_id like '%'||#{keyword}||'%'
-				    </when>
-				    <otherwise>
-				    and (board_title like '%'||#{keyword}||'%'  or member_id like '%'||#{keyword}||'%')
-				    </otherwise>
-				  </choose>
+			from (select b.*, (select count(1) from tbl_replyes2 r where r.board_no = b.board_no) as "reply_cnt"
+				from tbl_boards2 b
+				where 
+				<choose>
+				<when test="searchCondition == 'T'.toString() ">
+				board_title like '%'||#{keyword}||'%'
+				</when>
+				<when test="searchCondition == 'W'.toString() ">
+				member_id like '%'||#{keyword}||'%'
+				</when>
+				<otherwise>
+				board_title like '%'||#{keyword}||'%'
+				or
+				member_id like '%'||#{keyword}||'%'
+				</otherwise>
+				</choose>
 				order by b.board_no desc) a
 				<![CDATA[
 			where rownum<=(#{page} * 10)) r				

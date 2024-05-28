@@ -11,12 +11,10 @@ import com.dosirak.common.vo.BoardVO;
 import com.dosirak.hjh.service.BoardService;
 import com.dosirak.hjh.service.BoardServiceImpl;
 
-
-public class AddBoardControl implements Control {
+public class AddQueryControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
 		String title = req.getParameter("boardTitle");
 		String content = req.getParameter("boardContent");
 //		String memberId = req.getParameter("memberId");
@@ -32,14 +30,11 @@ public class AddBoardControl implements Control {
 //		vo.setMemberId(memberId);
 		vo.setCategory(category);
 		
-	
 
 		
 		if(svc.addBoard(vo)){
 			System.out.println("등록성공");
-		
-				resp.sendRedirect("boardList.do");			
-			
+			resp.sendRedirect("queryList.do");
 			
 		}else {
 			System.out.println("등록실패");
