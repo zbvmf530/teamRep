@@ -40,7 +40,7 @@
           <!-- Nav -->
           <ul class="navbar-nav flex-row">
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="offcanvas" href="#modalSearch">
+              <a class="nav-link" href="#modalSearch">
                 <i class="fe fe-search"></i>
               </a>
             </li>
@@ -60,7 +60,7 @@
      		 </div>
             </li>
             <li class="nav-item ms-lg-n4">
-              <a class="nav-link" data-bs-toggle="offcanvas" href="#modalShoppingCart">
+              <a class="nav-link" id="cartButton" href="cartpage.do">
                 <span data-cart-items="2">
                   <i class="fe fe-shopping-cart"></i>
                 </span>
