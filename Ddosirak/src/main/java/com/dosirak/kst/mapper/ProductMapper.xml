@@ -3,9 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dosirak.kst.mapper.ProductMapper">
-	<select id="productList" resultType="com.dosirak.common.vo.ProductVO"
-		parameterType="String"> select * from tbl_products where main_category =
-		'${mainCategory}' order by product_code
+	<select id="productList"
+		resultType="com.dosirak.common.vo.ProductVO" parameterType="String"> select *
+		from tbl_products where main_category =
+		'${mainCategory}' order by
+		product_code
 	</select>
 	<select id="getMainCategory" resultType="hashmap"> select MAIN_CATEGORY,
 		count(1) from tbl_products group by main_category order by
@@ -32,5 +34,22 @@
 	<select id="getPrice" parameterType="int" resultType="map"> select
 		option_name, option_price from tbl_options where product_code =
 		#{productCode}
+	</select>
+	<select id="getReview" parameterType="int"
+		resultType="com.dosirak.common.vo.ReviewVO">
+		select review_no, member_id, review_title, review_content,
+		grade
+		from tbl_reviews where product_code = #{productCode}
+	</select>
+
+	<select id="getReviewCnt" parameterType="int" resultType="int">
+		select
+		count(*) from tbl_reviews
+		where product_code=#{productCode}
+	</select>
+	<select id="getGradeAvg" parameterType="int" resultType="int">
+		select avg(grade) from tbl_reviews
+		where product_code=#{productCode}
+		group by product_code
 	</select>
 </mapper>

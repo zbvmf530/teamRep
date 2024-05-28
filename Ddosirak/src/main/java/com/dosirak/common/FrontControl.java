@@ -18,7 +18,6 @@ import com.dosirak.hjh.web.BoardListControl;
 import com.dosirak.hjh.web.ModBoardFormControl;
 import com.dosirak.hjh.web.ModifyControl;
 import com.dosirak.hjh.web.RemoveControl;
-import com.dosirak.hjh.web.RemoveFormControl;
 import com.dosirak.hjh.web.RemoveReplyControl;
 import com.dosirak.hjh.web.ReplyListControl;
 import com.dosirak.hjh.web.TotalCountControl;
@@ -76,7 +75,6 @@ Map<String, Control> map;
 		map.put("/modBoardForm.do", new ModBoardFormControl()); // 수정화면
 		map.put("/updateBoard.do", new ModifyControl()); // 수정
 		// 삭제관련
-		map.put("/delBoardForm.do", new RemoveFormControl());
 		map.put("/deleteBoard.do", new RemoveControl());
 
 		// 댓글관련
@@ -87,7 +85,11 @@ Map<String, Control> map;
 		
 		// 상품관련
 		map.put("/productlist.do", new ProductListControl());
-		map.put("/productDetail.do", new ProductDetailControl());	}
+		map.put("/productDetail.do", new ProductDetailControl());
+		
+		
+	
+	}
 	
 	// service
 	@Override
