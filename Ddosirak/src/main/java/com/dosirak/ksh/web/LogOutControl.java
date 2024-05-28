@@ -19,9 +19,9 @@ public class LogOutControl implements Control {
 		session = req.getSession();
 		
 		if(session.getAttribute("logId") == null) {
-			session.setAttribute("logId", "null");
+			session.setAttribute("logId", "none");
 			if(session.getAttribute("auth")==null) 
-			{session.setAttribute("auth", "null");}
+			{session.setAttribute("auth", "none");}
 			
 		}
 		resp.sendRedirect("main.do");

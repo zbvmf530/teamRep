@@ -4,10 +4,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map" %>
-  <%String logId = (String) session.getAttribute("logId"); 
-String auth = (String) session.getAttribute("auth");
-%>
-  
+
 <section class="py-12" id="howItWorks">
       <div class="container">
         <div class="row">
@@ -89,8 +86,3 @@ String auth = (String) session.getAttribute("auth");
     </section>
       </div>
     </section>
-    <script>
-	const totalList = JSON.parse('${json}');
-	const logid = '${logId}';
-	const auth = '${auth}';
-</script>
