@@ -24,17 +24,23 @@
 		resultType="com.dosirak.common.vo.ProductVO"> select * from tbl_products where
 		product_code=${productCode}
 	</select>
-	<select id="getOptions" parameterType="int" resultType="String"> select
-		o.option_name from tbl_products p join tbl_options o on p.product_code
+	<select id="getOptions" parameterType="int" resultType="com.dosirak.common.vo.ProductOptionVO"> select
+		o.option_name, o.option_price from tbl_products p join tbl_options o on p.product_code
 		= o.product_code where p.product_code = ${productCode}
 	</select>
 	<select id="getName" parameterType="int" resultType="String"> select
 		product_name from tbl_products where product_code = ${productCode}
 	</select>
-	<select id="getPrice" parameterType="int" resultType="map"> select
-		option_name, option_price from tbl_options where product_code =
+	<select id="getPrice" parameterType="int" resultType="int"> select
+		option_price from tbl_options where product_code =
 		#{productCode}
 	</select>
+	<select id="getImage" parameterType="int" resultType="String"> select
+		product_img from tbl_products where product_code =
+		#{productCode}
+	</select>
+
+	<!-- 리뷰관련 -->
 	<select id="getReview" parameterType="int"
 		resultType="com.dosirak.common.vo.ReviewVO">
 		select review_no, member_id, review_title, review_content,
@@ -48,8 +54,10 @@
 		where product_code=#{productCode}
 	</select>
 	<select id="getGradeAvg" parameterType="int" resultType="double">
-		select avg(grade) from tbl_reviews
+		select
+		avg(grade) from tbl_reviews
 		where product_code=#{productCode}
-		group by product_code
+		group by
+		product_code
 	</select>
 </mapper>

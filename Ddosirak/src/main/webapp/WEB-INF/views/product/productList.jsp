@@ -5,13 +5,13 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
 <h3>상품목록페이지..</h3>
+<div class="productListCard">
 <c:forEach var="product" items="${productList }">
-
 	<ul class="list-group list-group-flush">
 		<li class="list-group-item"><a
 			href="productDetail.do?code=${product.productCode }"
 			class="card-link"> <img class="img-fluid"
-				src="/BoardWeb/image/${product.productImg }">
+				src="/Ddosirak/testimages/${product.productImg }">
 		</a></li>
 		<li class="list-group-item">${product.productName }</li>
 		<li class="list-group-item"><a
@@ -27,3 +27,4 @@
 	</ul>
 
 </c:forEach>
+</div>

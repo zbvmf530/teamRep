@@ -35,6 +35,7 @@ import com.dosirak.ksh.web.tLoginControl;
 import com.dosirak.ksh.web.tLoginForm;
 import com.dosirak.kst.web.ProductDetailControl;
 import com.dosirak.kst.web.ProductListControl;
+import com.dosirak.kst.web.ReviewWriteControl;
 
 
 
@@ -92,8 +93,11 @@ Map<String, Control> map;
 		map.put("/getTotalCnt.do", new TotalCountControl()); // 댓글갯수
 		
 		// 상품관련
-		map.put("/productlist.do", new ProductListControl());
-		map.put("/productDetail.do", new ProductDetailControl());
+		map.put("/productlist.do", new ProductListControl()); // 상품리스트
+		map.put("/productDetail.do", new ProductDetailControl()); // 상품상세화면
+		
+		// 리뷰작성
+		map.put("/reviewWrite.do", new ReviewWriteControl()); // 리뷰작성
 
 	}
 	

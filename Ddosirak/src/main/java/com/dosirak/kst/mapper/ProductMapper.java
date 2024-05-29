@@ -20,11 +20,13 @@ public interface ProductMapper {
 
 	String getName(int code);
 	
-	List<Map<String, Integer>> getPrice(int code);
+	int getPrice(int code, String option);
 	
 	
 	List<Map<Integer, String>> getReview(int code);
 	int getReviewCnt(int code);
 	double getGradeAvg(int code);
+
+	String getImage(int code);
 
 }

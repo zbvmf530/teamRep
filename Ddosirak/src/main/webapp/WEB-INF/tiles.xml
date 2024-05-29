@@ -20,6 +20,10 @@
 	<definition name="WILDCARD:product/*" extends="ddosirak.homepage">
 		<put-attribute name="body" value="/WEB-INF/views/product/{1}.jsp" />
 	</definition>
+	
+	<definition name="WILDCARD:review/*" extends="ddosirak.homepage">
+		<put-attribute name="body" value="/WEB-INF/views/review/{1}.jsp" />
+	</definition>
 
 	<!-- 성훈씨 페이지(관리자 페이지) 타일즈 정의 부분입니다. -->
 	<definition name="ddosirak.adminpage" template="/WEB-INF/layouts/admin/template.jsp">

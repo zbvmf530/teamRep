@@ -82,9 +82,9 @@ public class ProductServiceImpl implements ProductService{
 
 
 	@Override
-	public List<Map<String, Integer>> getOptionPricesForProduct(int code) {
+	public int getOptionPricesForProduct(int code, String option) {
 		// TODO Auto-generated method stub
-		return mapper.getOptions(code);
+		return mapper.getPrice(code, option);
 	}
 
 
@@ -93,6 +93,22 @@ public class ProductServiceImpl implements ProductService{
 		// TODO Auto-generated method stub
 		return mapper.getOptions(code);
 	}
+
+
+	@Override
+	public ProductVO productOption(int code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public String getImage(int code) {
+		// TODO Auto-generated method stub
+		return mapper.getImage(code);
+	}
+
+
 
 
 }

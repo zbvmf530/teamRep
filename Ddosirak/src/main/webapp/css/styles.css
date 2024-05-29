@@ -10,6 +10,9 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+.productListCard ul{
+	display: inline-block;
+}
 .review {
 	border: 1px solid #ccc;
 	margin-bottom: 10px;
@@ -602,6 +605,10 @@ progress {
 	max-width: 100%;
 	height: auto;
 }
+.img-fluid2 {
+	max-width: 50%;
+	height: auto;
+}
 
 .img-thumbnail {
 	padding: 0.25rem;
@@ -676,6 +683,7 @@ progress {
 	margin-top: calc(-1 * var(--bs-gutter-y));
 	margin-right: calc(-0.5 * var(--bs-gutter-x));
 	margin-left: calc(-0.5 * var(--bs-gutter-x));
+	text-align: center;
 }
 
 .row>* {
@@ -2265,7 +2273,7 @@ textarea.form-control-lg {
 }
 
 .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled 
-	~ .form-check-label {
+	 ~ .form-check-label {
 	cursor: default;
 	opacity: 0.5;
 }
@@ -2514,8 +2522,9 @@ textarea.form-control-lg {
 }
 
 .form-floating>.form-control:focus ~ label, .form-floating>.form-control:not(:placeholder-shown) 
-	~ label, .form-floating>.form-control-plaintext ~ label, .form-floating>.form-select 
-	~ label {
+	 ~ label, .form-floating>.form-control-plaintext ~ label,
+	.form-floating>.form-select 
+	 ~ label {
 	opacity: 0.65;
 	transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
@@ -5253,6 +5262,7 @@ keyframes progress-bar-stripes { 0% {
 }
 
 .list-group-flush {
+	width : 250px;
 	border-radius: 0;
 }
 
@@ -5534,8 +5544,8 @@ keyframes progress-bar-stripes { 0% {
 	--bs-modal-footer-border-color: var(--bs-border-color);
 	--bs-modal-footer-border-width: 1px;
 	position: fixed;
-	top: 0;
-	left: 0;
+	top: 50%;
+	left: 50%;
 	z-index: var(--bs-modal-zindex);
 	display: none;
 	width: 100%;
@@ -5543,6 +5553,7 @@ keyframes progress-bar-stripes { 0% {
 	overflow-x: hidden;
 	overflow-y: auto;
 	outline: 0;
+
 }
 
 .modal-dialog {
@@ -6406,14 +6417,40 @@ keyframes spinner-grow { 0% {
 }
 
 50
+
+
+
+
 %
 {
 opacity
+
+
+
+
 :
-1;
+
+
+
+
+1
+
+
+;
 transform
+
+
+
+
 :
-none;
+
+
+
+
+none
+
+
+;
 }
 }
 .spinner-grow {
