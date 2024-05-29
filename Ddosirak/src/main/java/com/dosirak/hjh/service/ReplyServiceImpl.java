@@ -29,14 +29,14 @@ public class ReplyServiceImpl implements ReplyService{
 		return mapper.insertReply(rvo) == 1;
 	}
 
-
-
 	@Override
 	public boolean updateReply(ReplyVO rvo) {
 		return mapper.updateReply(rvo) == 1;
 	}
 
+	@Override
+	public int getReplyCnt(int boardNo) {
+		return mapper.replyCnt(boardNo);
+	}
 
-	
-	
 }

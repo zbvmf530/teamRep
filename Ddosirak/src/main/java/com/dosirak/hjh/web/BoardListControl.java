@@ -26,15 +26,17 @@ public class BoardListControl implements Control {
 		String sc = req.getParameter("searchCondition");
 		String kw = req.getParameter("keyword");
 		String type = req.getParameter("boardType");
+//		String bno = req.getParameter("boardNo");
 
 		page = page == null ? "1" : page;
 		search.setPage(Integer.parseInt(page));
 		search.setKeyword(kw);
 		search.setSearchCondition(sc);
 		search.setBoardType(type);
-
+//		System.out.println("번호"+bno);
 		BoardService svc = new BoardServiceImpl();
-
+//		svc.addViewCnt(Integer.parseInt(bno)); //조회카운트증가기능
+		
 		PageDTO pageDTO = new PageDTO(Integer.parseInt(page), svc.getTotalBoard(search));
 
 //		svc.replyCnt()

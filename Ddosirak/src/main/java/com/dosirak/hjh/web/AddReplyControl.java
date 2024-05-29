@@ -23,11 +23,10 @@ public class AddReplyControl implements Control {
 		resp.setContentType("text/json;charset=utf-8");
 		
 		//원본글, 댓글작성자, 댓글내용
-//		String content = req.getParameter("content");
-		String replyer = req.getParameter("memberId");
-		String reply = req.getParameter("replyContent");
+		String replyer = req.getParameter("writer");
+		String reply = req.getParameter("reply");
 		String bno = req.getParameter("bno");
-		String path = "Reply/addReply.tiles";	
+	
 		
 		
 		ReplyVO rvo = new ReplyVO();
@@ -63,7 +62,6 @@ public class AddReplyControl implements Control {
 		
 		resp.getWriter().print(json);
 	}
-
 
 	}
 

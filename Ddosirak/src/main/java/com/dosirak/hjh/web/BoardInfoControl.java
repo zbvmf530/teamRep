@@ -24,7 +24,7 @@ public class BoardInfoControl implements Control {
 		BoardService svc = new BoardServiceImpl();
 		BoardVO vo = svc.getBoard(Integer.parseInt(bno)); 
 		svc.addViewCnt(Integer.parseInt(bno));
-		
+		System.out.println("vo"+vo);
 		
 		req.setAttribute("result", vo);
 		req.setAttribute("page", page);

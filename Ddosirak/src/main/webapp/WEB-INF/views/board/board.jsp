@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <style>
 div.reply div {
@@ -21,9 +21,37 @@ div.reply li {
 div.reply span {
 	display: inline-block;
 }
+
+.centers {
+	text-align: center;
+}
+
+.pagination {
+	display: inline-block;
+}
+
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+	border: 1px solid #ddd;
+	margin: 0 4px;
+}
+
+.pagination a.active {
+	background-color: #FF6F61;
+	color: white;
+	border: 1px solid #FF6F61;
+}
+
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
+}
 </style>
 
-<link href="css/paging.css" rel="stylesheet" />
+
 
 
 <h2>상세화면</h2>
@@ -32,30 +60,30 @@ div.reply span {
 <c:choose>
 	<c:when test="${empty result }">
 		<p>조회된 결과가 없습니다</p>
-		
+
 	</c:when>
 	<c:otherwise>
 		<form name="myFrm">
-			<input type="hidden" name="bno" value="${result.boardNo }">
-			<input type="hidden" name="category" value="${result.category }">
-			<input type="hidden" name="page" value="${page }">
+			<input type="hidden" name="bno" value="${result.boardNo }"> 
+			<input type="hidden" name="category" value="${result.category }"> 
+			<input type="hidden" name="page" value="${page }"> 
 			<input type="hidden" name="searchCondition" value="${searchCondition }">
 			<input type="hidden" name="keyword" value="${keyword }">
-	
+			<input type="hidden" name="replyCnt" value="${result.replyCnt }">
+		</form>
 		<table class="table">
 			<tr>
 				<th>제목</th>
 				<th>${result.boardTitle }</th>
 			</tr>
-		
 			<tr>
 				<th>작성자</th>
 				<th>${result.memberId }</th>
 				<th>작성일자</th>
-				<td><fmt:formatDate value ="${result.boardDate }" pattern="yyyy-MM-dd" /></td>
+				<td><fmt:formatDate value="${result.boardDate }"
+							pattern="yyyy-MM-dd" /></td>
 				<th>조회수</th>
 				<th>${result.boardViews }</th>
-			
 			</tr>
 			<tr>
 				<th>내용</th>
@@ -63,45 +91,54 @@ div.reply span {
 			</tr>
 			<tr align="center">
 				<td colspan="4">
-				<button class="btn btn-danger" id="delBtn">삭제</button>
-				<button class="btn btn-primary" id="modBtn">수정</button>
+					<button class="btn btn-danger" id="delBtn">삭제</button>
+					<button class="btn btn-primary" id="modBtn">수정</button>
 				</td>
 			</tr>
 		</table>
-			</form>
+	
 	</c:otherwise>
 </c:choose>
 
 <!-- 댓글목록 -->
-<div class = "container reply">
-<div class = "header">
-
-</div>
-	<div class = "content">
+<div class="container reply">
+	<div class="content">
 		<ul>
-			<li style ="display : none;">
-				<span class = "col-sm-2">2</span>
-				<span class = "col-sm-2">3</span>
-				<span class = "col-sm-2">user02</span>
-				<span class = "col-sm-1"><button onclick="updateRow(event)" class = "btn btn-warning">수정</button></span>
-				<span class = "col-sm-1"><button onclick="deleteRow(event)" class = "btn btn-warning">삭제</button></span>
+			<li style="display: none;">
+				<span class="col-sm-2">아이디</span>
+			 	<span class="col-sm-2">날짜</span> 
+			 	<span class="col-sm-2">내용</span>
+			 	<span class="col-sm-1"><button onclick="updateRow(event)" class="btn btn-warning">수정</button></span> 
+			 	<span class="col-sm-1"><button onclick="deleteRow(event)" class="btn btn-warning">삭제</button></span>
 			</li>
-		
 		</ul>
-	<form>
-	<p>댓글달기</p>
-	<input class = "col-sm-8" id="reply">
-	<button class = "col-sm-1" id = "addReply">확인</button>
-</form>
-	</div> <!-- content -->
-	
-</div> <!-- container -->
+	</div>
+	<!-- content -->
+		<div class = "footer">
+		<div class="centers">
+  			<div class="pagination">
+  			<a href = "#">1</a>
+  			<a href = "#" class = "active">2</a>
+  			<a href = "#">3</a>
+  			</div>
+  		</div>
+			<p>댓글달기</p>
+			<input class="col-sm-8" id="reply">
+			<button class="col-sm-1" id="addReply">확인</button>
+		
+	</div>
+</div>
+<!-- container -->
+
+
+
 
 <script>
 	const bno = '${result.boardNo }';
-// 	const writer = '${logId }';
+	const writer = '${logId }';
 </script>
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src = "js/replyService.js"></script>
-<script src = "js/board.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/replyService.js"></script>
+<script src="js/board.js"></script>
 

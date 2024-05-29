@@ -21,12 +21,12 @@ import com.dosirak.hjh.web.RemoveControl;
 import com.dosirak.hjh.web.RemoveReplyControl;
 import com.dosirak.hjh.web.ReplyListControl;
 import com.dosirak.hjh.web.TotalCountControl;
-
 import com.dosirak.jsb.web.CartControl;
 import com.dosirak.jsb.web.GetIDControl;
 import com.dosirak.jsb.web.MainControl;
 import com.dosirak.jsb.web.MenuControl;
 import com.dosirak.jsb.web.MypageControl;
+import com.dosirak.jsb.web.UpdateControl;
 import com.dosirak.ksh.web.AddMemberControl;
 import com.dosirak.ksh.web.IdCheck;
 import com.dosirak.ksh.web.LogOutControl;
@@ -84,12 +84,12 @@ Map<String, Control> map;
 		map.put("/updateBoard.do", new ModifyControl()); // 수정
 		map.put("/deleteBoard.do", new RemoveControl()); //글삭제
 		
-		
 		// 댓글관련
 		map.put("/replyList.do", new ReplyListControl());// 댓글보기
 		map.put("/removeReply.do", new RemoveReplyControl());// 댓글삭제
 		map.put("/addReply.do", new AddReplyControl()); // 댓글작성
 		map.put("/getTotalCnt.do", new TotalCountControl()); // 댓글갯수
+		map.put("/updateReply.do", new UpdateControl()); // 댓글수정
 		
 		// 상품관련
 		map.put("/productlist.do", new ProductListControl());
