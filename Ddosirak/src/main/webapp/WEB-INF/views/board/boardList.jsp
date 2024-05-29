@@ -1,42 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib tagdir="/WEB-INF/tags"  prefix="my"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="my"%>
 
 
 <style>
-	.center {
-		text-align: center;
-	}
+.centers {
+	text-align: center;
+}
 
-	.pagination {
-		display: inline-block;
-	}
+.pagination {
+	display: inline-block;
+}
 
-	.pagination a {
-		color: black;
-		float: left;
-		padding: 8px 16px;
-		text-decoration: none;
-		transition: background-color .3s;
-		border: 1px solid #ddd;
-		margin: 0 4px;
-	}
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+	border: 1px solid #ddd;
+	margin: 0 4px;
+}
 
-	.pagination a.active {
-		background-color: #4CAF50;
-		color: white;
-		border: 1px solid #4CAF50;
-	}
+.pagination a.active {
+	background-color: #FF6F61;
+	color: white;
+	border: 1px solid #FF6F61;
+}
 
-	.pagination a:hover:not(.active) {
-		background-color: #ddd;
-	}
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
+}
 </style>
-
-<h3>공지사항</h3>
+<c:choose>
+<c:when test="${boardType =='N'}">
+<h3>NOTICE</h3>
+</c:when>
+<c:otherwise>
+<h3>Q&A</h3>
+</c:otherwise>
+</c:choose>
 
 
 <div class="row">
@@ -55,55 +61,68 @@
 		</thead>
 		<tbody>
 			<c:forEach var="board" items="${boardList }">
-			
-						<tr>
-							<td>${board.boardNo }</td>
-							<td>${board.category }</td>
+
+				<tr>
+					<td>${board.boardNo }</td>
+					<td>${board.category }</td>
+					<c:choose>
+						<c:when test="${boardType =='N'}">
 							<td><a
-									href="boardInfo.do?bno=${board.boardNo }&page=${paging.page }&kerword=${keyword }&searchCondition=${searchCondition}">${board.boardTitle }</a></td>
-							<td>${board.memberId }</td>
-							<td>
-								<fmt:formatDate value="${board.boardDate }" pattern="yyyy-MM-dd" />
-							</td>
+								href="boardInfo.do?boardType=N&bno=${board.boardNo }&page=${paging.page }&kerword=${keyword }&searchCondition=${searchCondition}">${board.boardTitle }</a></td>
+						</c:when>
+						<c:otherwise>
+							<td><a
+								href="boardInfo.do?boardType=Q&bno=${board.boardNo }&page=${paging.page }&kerword=${keyword }&searchCondition=${searchCondition}">${board.boardTitle }</a></td>
+						</c:otherwise>
+					</c:choose>
+
+
+					<td>${board.memberId }</td>
+							<td><fmt:formatDate value="${board.boardDate }"
+									pattern="yyyy-MM-dd" /></td>
 							<td>${board.boardViews }</td>
-							<td>
-								<c:choose>
+							<td><c:choose>
 									<c:when test="${board.replyCnt != 0 }">
 										<p>답변완료</p>
 									</c:when>
 									<c:otherwise>
 										<p>답변대기</p>
 									</c:otherwise>
-								</c:choose>
-							</td>
-						</tr>
-				
-		
+								</c:choose></td>
+				</tr>
+
+
 			</c:forEach>
 		</tbody>
 	</table>
 </div>
 <my:paging pageInfo="${paging }"></my:paging>
-<div class="row"><button class="col-sm-3" id="addBoard" onclick="location.href='addForm.do'">글쓰기</button></div>
+<div class="row">
+	<button class="col-sm-2" id="addBoard"
+		onclick="location.href='addForm.do'">글쓰기</button>
+</div>
 
 <div class="row">
 	<form action="boardList.do">
+	<input type="hidden" name="boardType" value="${boardType }">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3">
 				<select name="searchCondition" class="form-control">
 					<option value="">선택하세요</option>
 					<option value="T" ${searchCondition=='T' ? 'selected' : '' }>제목</option>
 					<option value="W" ${searchCondition=='W' ? 'selected' : '' }>작성자</option>
-					<option value="TW" ${searchCondition=='TW' ? 'selected' : '' }>제목 & 작성자</option>
+					<option value="TW" ${searchCondition=='TW' ? 'selected' : '' }>제목
+						& 작성자</option>
 				</select>
 			</div>
 			<div class="col-sm-6">
-				<input type="text" name="keyword" value="${keyword }" class="form-control">
+				<input type="text" name="keyword" value="${keyword }"
+					class="form-control">
 
 			</div>
 
-			<div class="col-sm-2">
-				<input type="submit" value="찾기" class="btn btn-primary">
+			<div class="col-sm-3">
+				<button type="submit">검색</button>
 			</div>
 		</div>
 	</form>

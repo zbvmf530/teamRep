@@ -36,7 +36,7 @@ function showList() {
 				const row = makeRow(reply);
 				document.querySelector('div.reply ul').appendChild(row);
 			})
-			makePageInfo();
+		
 		},
 		err => {
 			console.log(err);
@@ -56,6 +56,27 @@ function deleteRow(e) {
 					showList();
 				}
 			} else if (result.retCode == 'NG') {
+				alert('수정실패')
+			} else {
+				alert('알수없는 반환값')
+			}
+		})
+		, err => cosnsole.log(err);
+}
+//수정
+function updateRow(e) {
+	const rno = e.target.parentElement.parentElement.dataset.rno; //숫자 가져오기
+	const reply = e.target.parentElement.parentElement.dataset.reply; //숫자 가져오기
+	console.log("댓글번호는" + rno);
+	console.log("내용은" + reply);
+	svc.updateReply({ rno,writer,reply },
+		result => {
+			if (result.retCode == 'OK') {
+				
+					alert('수정되었습니다'); //삭제화면 호출
+					showList();
+				
+			} else if (result.retCode == 'NG') {
 				alert('삭제실패')
 			} else {
 				alert('알수없는 반환값')
@@ -63,18 +84,28 @@ function deleteRow(e) {
 		})
 		, err => cosnsole.log(err);
 }
-
 //등록
-document.getElementById('addReply').addEventListener('click', function(e) {
-	let replyContent = document.getElementById('reply').value;
-	svc.addReply({ bno: bno, memberId: memberId, replyContent: replyContent },
+$('#addReply').on('click',function(){
+	let reply = $('#reply').val();
+	if(!reply){
+		alert('댓글을 입력하세요');
+		return;
+	}
+//	if(!writer){
+//		alert('로그인하세요');
+//		return;
+//	}
+	svc.addReply({ bno,writer,reply },
 		result => {
 			if (result.retCode == 'OK') {
-				const row = makeRow(result.retVal);
-				document.querySelector('div.reply ul').appendChild(row);
+				alert('등록되었습니다');
+				page = 1;
+				showList();
+				$('#reply').val('');
+			
 			}
-		})
-		, err => console.log(err);
+		}
+		, err => console.log(err));
 })
 
 
@@ -89,8 +120,6 @@ function makeRow(reply = {}) {
 	tmpl.querySelector('span:nth-of-type(3)').innerText = reply.replyContent;
 	return tmpl;
 }
-
-//페이징 생성
 let pagination = document.querySelector('div.pagination');
 function  makePageInfo(){
 	svc.getTotalCount(bno //param1

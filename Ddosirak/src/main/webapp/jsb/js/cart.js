@@ -1,3 +1,125 @@
+
+
+$(document).ready(initCart);
+
+
+function initCart(){	
+	let cartList = $('ul[id="cartlist"]');
+	let cartItemFormat = $('ul[id="cartlist"]').find('li');
+	
+	$(document).find($('span[class="ms-auto fs-sm"]')).text('0');
+	$(document).find($('span[class="ms-auto fs-sm"]')).attr('data-totalprice',0);
+	
+	cartsvc.cartList(result=>{
+		//console.log(result);
+		$.each(result,function(idx,item){
+			
+			let cartItem = cartItemFormat.clone();
+			cartItem.removeAttr('hidden');
+			//console.log(item['price']);
+			//console.log(item['productCode']);
+			
+			cartList.append(cartItem);
+			
+			//console.log(cartItem.find($('p[class="mb-7 fs-sm text-muted"]')));
+			cartsvc.optionList(item['optionCode'],result=>{
+													cartItem.find($('p[class="mb-7 fs-sm text-muted"]'))
+													.text(result['optionName']);
+													
+													cartItem.find($('div[class="d-flex mb-2 fw-bold"]'))
+													.find($('input[id="optPrice"]'))
+													.attr('value',result['optionPrice']);
+													});
+													
+			cartsvc.productList(item['productCode'],result=> 
+													cartItem.find($('div[class="d-flex mb-2 fw-bold"] a'))
+													.text(result['productName']));
+													
+													cartItem.find($('div[class="d-flex mb-2 fw-bold"]'))
+													.find($('input[id="prodPrice"]'))
+													.attr('value',result['price']);
+													
+			// 옵션 fetch item['optionCode']
+			cartItem.find($('span[class="ms-auto"]')).text((item['price']).numberFormat()+'원');
+			cartItem.find($('span[class="ms-auto"]')).attr('data-price',item['price']);
+			
+			// 상품 이름 div
+			//console.log(cartItem.find($('div[class="d-flex mb-2 fw-bold"]')).find($('input')));
+			// 상품 개수 div
+			cartItem.find($('div[class="d-flex align-items-center"]'))
+			.find($('[id="optPrice"]')).attr('value',item['count']);
+			
+			calcTotalPrice();
+			
+		});
+	});
+	
+	
+	//console.log($('ul[id="cartlist"]').find('li'));
+}
+function calcTotalPrice(){
+	let totalPrice = $(document).find($('span[class="ms-auto fs-sm"]'));
+	//let pricevalue = totalPrice.data('totalprice');
+	//console.log(pricevalue);
+	let cartList = $('ul[id="cartlist"]');
+	let sum = 0;
+	//console.log(cartList.find('li'));
+	cartList.find('li').each(function(idx,item){
+		if($(item).is(':hidden')){}
+		else{
+			let itemprice = $(item).find($('span[class="ms-auto"]')).data('price');
+			sum += itemprice;
+		}
+	});
+	totalPrice.data('totalprice',sum);
+	totalPrice.text(totalPrice.data('totalprice').numberFormat()+'원');
+	//console.log('sum = ' + sum);
+}
+
+function test(e){
+	//console.log($((e.currentTarget).children).attr('class').indexOf("right") != -1);
+	let count = $((e.currentTarget.parentElement)).find('input');
+	//console.log();
+	// 증가
+	if($((e.currentTarget).children).attr('class').indexOf("right") != -1)
+	{
+		let change = (count.attr('value')*1)+1;
+		count.attr('value', change);
+	}
+	// 감소
+	else{
+		let change = count.attr('value')-1;
+		if(change<=0){change = 0;}
+		count.attr('value', change);
+	}
+	
+	let carItem = $(e.currentTarget.parentElement.parentElement);
+	// (1*count.attr('value'))
+	
+	// 화면반영(장바구니 아이템 가격 ~~원)
+	carItem
+			.find($('span[class="ms-auto"]')).text().numberFormat()+'원';
+
+	// 데이터 변경(다시 계산)	
+	//  => 개수 * (상품가격+옵션가격)   =>  (1*count.attr('value')) * (prodPrice)
+	let prodPrice = carItem
+			.find($('div[class="d-flex mb-2 fw-bold"]'))
+			.find($('input[id="prodPrice"]'))
+			.attr('value');
+	/*carItem
+			.find($('span[class="ms-auto"]'))
+			.attr('data-price');
+*/	
+	
+	console.log("상품가격 : "+prodPrice);
+	console.log("옵션가격 : "+carItem
+				.find($('div[class="d-flex mb-2 fw-bold"]'))
+				.find($('input[id="optPrice"]'))
+				.attr('value'));
+	
+	//(1*count.attr('value'))
+}
+
 // 숫자 3자리 콤마찍기
 Number.prototype.numberFormat = function() {
 	if (this == 0)

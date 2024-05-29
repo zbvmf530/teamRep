@@ -8,21 +8,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dosirak.common.Control;
-import com.dosirak.common.vo.CartVO;
-import com.dosirak.jsb.service.CartService;
-import com.dosirak.jsb.service.CartServiceImpl;
+import com.dosirak.common.vo.ProductVO;
+import com.dosirak.jsb.service.ProductService;
+import com.dosirak.jsb.service.ProductServiceImpl;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class CartControl implements Control {
+public class ProductJsonControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		CartService svc = new CartServiceImpl();
-		List<CartVO> cartList = svc.cartList();
+		// TODO Auto-generated method stub
+		ProductService svc = new ProductServiceImpl();
+		ProductVO product = svc.getProduct(Integer.parseInt(req.getParameter("prodCode")));
 		
 		Gson gson = new GsonBuilder().create();
-		String json = gson.toJson(cartList);
+		String json = gson.toJson(product);
 		resp.getWriter().print(json);
 	}
+
 }

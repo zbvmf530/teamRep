@@ -13,7 +13,7 @@ public interface BoardService {
 
 	boolean addBoard(BoardVO board);
 	BoardVO getBoard(int boardNo);
-	int addViewCnt(int boardNo);
+	int addViewCnt(int boardNo); //조회수
 	//수정
 	boolean modifyBoard(BoardVO board);
 	//삭제
