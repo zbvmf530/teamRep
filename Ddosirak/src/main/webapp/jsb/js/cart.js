@@ -4,22 +4,23 @@ $(document).ready(initCart);
 
 
 function initCart(){	
+	
+	$(document).find($('span[id="totalPrice"]')).text('0');
+	$(document).find($('span[id="totalPrice"]')).attr('data-totalprice',0);
+	drawCart();
+	//console.log($('ul[id="cartlist"]').find('li'));
+}
+function drawCart(){
 	let cartList = $('ul[id="cartlist"]');
-	let cartItemFormat = $('ul[id="cartlist"]').find('li');
-	
-	$(document).find($('span[class="ms-auto fs-sm"]')).text('0');
-	$(document).find($('span[class="ms-auto fs-sm"]')).attr('data-totalprice',0);
-	
+	let cartItemFormat = $('ul[id="cartlist"]').find('li[hidden="hidden"]');
+	cartList.find('li').each((idx,item)=>{if(idx>0){$(item).remove()}});
 	cartsvc.cartList(result=>{
-		//console.log(result);
 		$.each(result,function(idx,item){
 			
 			let cartItem = cartItemFormat.clone();
 			cartItem.removeAttr('hidden');
-			//console.log(item['price']);
-			//console.log(item['productCode']);
-			
 			cartList.append(cartItem);
+			cartItem.attr('data-cartNo',item['cartNo']);
 			
 			//console.log(cartItem.find($('p[class="mb-7 fs-sm text-muted"]')));
 			cartsvc.optionList(item['optionCode'],result=>{
@@ -31,13 +32,14 @@ function initCart(){
 													.attr('value',result['optionPrice']);
 													});
 													
-			cartsvc.productList(item['productCode'],result=> 
+			cartsvc.productList(item['productCode'],result=> {
 													cartItem.find($('div[class="d-flex mb-2 fw-bold"] a'))
-													.text(result['productName']));
+													.text(result['productName']);
 													
 													cartItem.find($('div[class="d-flex mb-2 fw-bold"]'))
 													.find($('input[id="prodPrice"]'))
-													.attr('value',result['price']);
+													.attr('value',result['price'])
+													});
 													
 			// 옵션 fetch item['optionCode']
 			cartItem.find($('span[class="ms-auto"]')).text((item['price']).numberFormat()+'원');
@@ -47,37 +49,44 @@ function initCart(){
 			//console.log(cartItem.find($('div[class="d-flex mb-2 fw-bold"]')).find($('input')));
 			// 상품 개수 div
 			cartItem.find($('div[class="d-flex align-items-center"]'))
-			.find($('[id="optPrice"]')).attr('value',item['count']);
+			.find($('input[id="itemcount"]')).attr('value',item['count']);
 			
 			calcTotalPrice();
 			
 		});
 	});
 	
-	
-	//console.log($('ul[id="cartlist"]').find('li'));
 }
 function calcTotalPrice(){
-	let totalPrice = $(document).find($('span[class="ms-auto fs-sm"]'));
-	//let pricevalue = totalPrice.data('totalprice');
-	//console.log(pricevalue);
-	let cartList = $('ul[id="cartlist"]');
+	let totalPrice = $(document).find($('span[id="totalPrice"]'));
+	//console.log(totalPrice);
 	let sum = 0;
+	let cartList = $('ul[id="cartlist"]');
+	
 	//console.log(cartList.find('li'));
 	cartList.find('li').each(function(idx,item){
 		if($(item).is(':hidden')){}
 		else{
-			let itemprice = $(item).find($('span[class="ms-auto"]')).data('price');
-			sum += itemprice;
+			let itemprice = $(item).find($('span[class="ms-auto"]')).attr('data-price');
+			sum = (1*sum)+(1*itemprice);
 		}
 	});
+	//console.log(sum);
+	console.log(totalPrice);
 	totalPrice.data('totalprice',sum);
-	totalPrice.text(totalPrice.data('totalprice').numberFormat()+'원');
-	//console.log('sum = ' + sum);
+	console.log("총가격 : "+totalPrice.data('totalprice'));
+	totalPrice.text((totalPrice.data('totalprice')).numberFormat()+'원');
+}
+
+function removeItem(e){
+	let item = (e.currentTarget.parentElement.parentElement.parentElement.parentElement);
+	//console.log("삭제할 아이템 : "+$(item));
+	console.log($(item).data('cartno'));
 }
 
 function test(e){
-	//console.log($((e.currentTarget).children).attr('class').indexOf("right") != -1);
+	let itemLi = $(e.currentTarget.parentElement.parentElement.parentElement.parentElement);
+	// 상품개수
 	let count = $((e.currentTarget.parentElement)).find('input');
 	//console.log();
 	// 증가
@@ -89,35 +98,40 @@ function test(e){
 	// 감소
 	else{
 		let change = count.attr('value')-1;
-		if(change<=0){change = 0;}
+		if(change<=0){change = 1;}
 		count.attr('value', change);
 	}
 	
 	let carItem = $(e.currentTarget.parentElement.parentElement);
-	// (1*count.attr('value'))
-	
-	// 화면반영(장바구니 아이템 가격 ~~원)
-	carItem
-			.find($('span[class="ms-auto"]')).text().numberFormat()+'원';
-
-	// 데이터 변경(다시 계산)	
-	//  => 개수 * (상품가격+옵션가격)   =>  (1*count.attr('value')) * (prodPrice)
+	//  => 개수 * (상품가격+옵션가격)   =>  (1*count.attr('value')) * (prodPrice+optPrice)
 	let prodPrice = carItem
 			.find($('div[class="d-flex mb-2 fw-bold"]'))
 			.find($('input[id="prodPrice"]'))
 			.attr('value');
-	/*carItem
-			.find($('span[class="ms-auto"]'))
-			.attr('data-price');
-*/	
+	let optPrice = carItem
+			.find($('div[class="d-flex mb-2 fw-bold"]'))
+			.find($('input[id="optPrice"]'))
+			.attr('value');
+
+	let itemPrice = ((1*prodPrice)+(1*optPrice))*count.attr('value');
 	
-	console.log("상품가격 : "+prodPrice);
-	console.log("옵션가격 : "+carItem
-				.find($('div[class="d-flex mb-2 fw-bold"]'))
-				.find($('input[id="optPrice"]'))
-				.attr('value'));
+	// 화면반영(장바구니 아이템 가격 ~~원)
+	carItem.find($('span[class="ms-auto"]')).text((itemPrice).numberFormat()+'원');
 	
-	//(1*count.attr('value'))
+	// 데이터 변경(다시 계산)	
+	carItem.find($('span[class="ms-auto"]')).removeAttr('data-price');
+	carItem.find($('span[class="ms-auto"]')).attr('data-price',itemPrice);
+	
+	// update 쿼리 요청
+	// editCart.do
+	let no = itemLi.data('cartno');
+	let qty = count.attr('value')
+	let cvo = {no,qty};
+	cartsvc.cartUpdate(cvo, result=>{
+		console.log(result);
+		//fetch 콘트롤 만들어주고 mapper도 만들어줘야함.
+	},err => console.log(err));
+	drawCart();	
 }
 
 // 숫자 3자리 콤마찍기

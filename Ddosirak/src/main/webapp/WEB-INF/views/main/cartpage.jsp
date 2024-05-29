@@ -30,7 +30,7 @@
                     <div class="d-flex mb-2 fw-bold">
                       <a class="text-body" href="product.html">담기</a> <span class="ms-auto">$40.00</span>
                       <input type="hidden" id = "optPrice">
-                      <input type="hidden" id ="prodPrice">
+                      <input type="hidden" id = "prodPrice">
                     </div>
 
                     <!-- Text -->
@@ -43,12 +43,12 @@
                       <span onclick="javascript: test(event);">
 		                <i class="fas fa-arrow-alt-circle-left left"></i>
 		              </span>
-		              <input type="text" value="0" readonly>
+		              <input id = "itemcount" type="text" value="0" readonly>
 		              <span onclick="javascript: test(event);">
 		                <i class="fas fa-arrow-alt-circle-right right"></i>
 		              </span>
                       <!-- Remove -->
-                      <a class="fs-xs text-gray-400 ms-auto" href="#!">
+                      <a class="fs-xs text-gray-400 ms-auto" href="#" onclick="javascript: removeItem(event); return false;">
                         <i class="fe fe-x"></i> Remove
                       </a>
 
@@ -67,7 +67,7 @@
               <div class="card-body">
                 <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
                   <li class="list-group-item d-flex fs-lg fw-bold">
-                    <span>Total</span> <span class="ms-auto fs-sm">$89.00</span>
+                    <span>Total</span> <span class="ms-auto fs-sm" id = "totalPrice">$89.00</span>
                   </li>
                 </ul>
               </div>
