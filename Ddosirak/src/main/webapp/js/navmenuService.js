@@ -10,5 +10,11 @@
 			.then(resolve => resolve.json()) // json -> 객체.
 			.then(successCall)
 			.catch(errorCall);
+	},
+	getSessionID(successCall, errorCall){
+		fetch('getID.do')
+			.then(resolve => resolve.json()) // json -> 객체.
+			.then(successCall)
+			.catch(errorCall);
 	}
 }

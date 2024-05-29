@@ -39,7 +39,7 @@ public class MenuControl implements Control {
 		}
 		Gson gson = new GsonBuilder().create();
 		String json = gson.toJson(TotalList);
-		System.out.println(json);
+		//System.out.println(json);
 		resp.getWriter().print(json);
 	}
 }

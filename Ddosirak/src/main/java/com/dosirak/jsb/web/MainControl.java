@@ -54,21 +54,11 @@ public class MainControl implements Control {
 		
 		Gson gson = new GsonBuilder().create();
 		String json = gson.toJson(TotalList);
-		System.out.println(json);
+		//System.out.println(json);
 		req.setAttribute("totalList", TotalList);
 		req.setAttribute("json", json);
 		req.setAttribute("bestProducts", bestProducts);
-		
-		
-		HttpSession session = req.getSession();
 				
-		if(session.getAttribute("logId") == null) {
-			session.setAttribute("logId", "null");
-			if(session.getAttribute("auth")==null) 
-			{session.setAttribute("auth", "null");}
-			
-		}
-		
 		System.out.println("실행!");
 		req.getRequestDispatcher("main/main.tiles").forward(req, resp);
 	}

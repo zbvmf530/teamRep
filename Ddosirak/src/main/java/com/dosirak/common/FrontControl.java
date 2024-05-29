@@ -23,7 +23,7 @@ import com.dosirak.hjh.web.ReplyListControl;
 import com.dosirak.hjh.web.TotalCountControl;
 
 import com.dosirak.jsb.web.CartControl;
-
+import com.dosirak.jsb.web.GetIDControl;
 import com.dosirak.jsb.web.MainControl;
 import com.dosirak.jsb.web.MenuControl;
 import com.dosirak.jsb.web.MypageControl;
@@ -56,6 +56,9 @@ Map<String, Control> map;
 		map.put("/main.do", new MainControl());
 		// 메뉴 구성
 		map.put("/menuList.do", new MenuControl());
+		// 세션 아이디 가져오는 컨트롤
+		map.put("/getID.do", new GetIDControl());
+		
 		// 마이페이지
 		map.put("/mypage.do", new MypageControl());
 		
