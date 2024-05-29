@@ -25,6 +25,8 @@
     <mapper resource="com/dosirak/jsb/mapper/ProductMapper.xml"/>
     <mapper resource="com/dosirak/jsb/mapper/OrderMapper.xml"/>
     <mapper resource="com/dosirak/jsb/mapper/OrderDetailMapper.xml"/>
+    <mapper resource="com/dosirak/jsb/mapper/OptionMapper.xml"/>
+    <mapper resource="com/dosirak/jsb/mapper/CartMapper.xml"/>
     
     <mapper resource="com/dosirak/ksh/mapper/MemberMapper.xml"/>
     
