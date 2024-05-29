@@ -10,6 +10,26 @@ const cartsvc = {
 			.then(successCall)
 			.catch(errorCall);
 	},
+	optionList(ono,successCall, errorCall) {
+		fetch('optionJson.do', {
+			method: 'post',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: 'optionCode=' + ono
+		})
+			.then(resolve => resolve.json()) // json문자->객체.
+			.then(successCall)
+			.catch(errorCall);
+	},
+	productList(pno=1, successCall, errorCall) {
+		fetch('productJson.do', {
+			method: 'post',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: 'prodCode=' + pno
+		})
+			.then(resolve => resolve.json()) // json문자->객체.
+			.then(successCall)
+			.catch(errorCall);
+	},
 	cartUpdate(cvo = {}, successCall, errorCall) {
 		fetch('editCart.do', {
 			method: 'post',
