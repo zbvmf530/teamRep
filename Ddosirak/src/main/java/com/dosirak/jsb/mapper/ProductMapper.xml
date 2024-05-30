@@ -15,9 +15,14 @@
 		order by main_category
 	</select>
 	<select id="getSubCategory" parameterType = "string" resultType="string">
-		select sub_category
+		select distinct sub_category
 		from tbl_products
 		where main_category = '${value}'
+	</select>
+	
+	<select id="getNavMenu" resultType="com.dosirak.common.vo.CategoryVO">
+		select distinct (main_category), (sub_category)
+		from tbl_products
 	</select>
 	
 	<select id="getBestSeller" resultType="hashmap">

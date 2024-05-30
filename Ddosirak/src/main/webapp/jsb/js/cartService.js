@@ -34,7 +34,7 @@ const cartsvc = {
 		fetch('editCart.do', {
 			method: 'post',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: 'no=' + cvo.no + '&qty=' + cvo.qty
+			body: 'cartNo=' + cvo.no + '&count=' + cvo.cnt + '&price=' + cvo.prc
 		})
 			.then(resolve => resolve.json())
 			.then(successCall)
