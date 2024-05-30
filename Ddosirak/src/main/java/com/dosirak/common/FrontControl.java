@@ -41,6 +41,7 @@ import com.dosirak.ksh.web.tLoginControl;
 import com.dosirak.ksh.web.tLoginForm;
 import com.dosirak.kst.web.ProductDetailControl;
 import com.dosirak.kst.web.ProductListControl;
+import com.dosirak.kst.web.ProductOptionPriceControl;
 import com.dosirak.kst.web.ReviewWriteControl;
 
 
@@ -104,6 +105,7 @@ Map<String, Control> map;
 		// 상품관련
 		map.put("/productlist.do", new ProductListControl()); // 상품리스트
 		map.put("/productDetail.do", new ProductDetailControl()); // 상품상세화면
+		map.put("/productGetPrice.do", new ProductOptionPriceControl());
 		
 		// 리뷰작성
 		map.put("/reviewWrite.do", new ReviewWriteControl()); // 리뷰작성

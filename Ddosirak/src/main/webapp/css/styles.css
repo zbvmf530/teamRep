@@ -10,9 +10,11 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-.productListCard ul{
+
+.productListCard ul {
 	display: inline-block;
 }
+
 .review {
 	border: 1px solid #ccc;
 	margin-bottom: 10px;
@@ -605,6 +607,7 @@ progress {
 	max-width: 100%;
 	height: auto;
 }
+
 .img-fluid2 {
 	max-width: 50%;
 	height: auto;
@@ -4695,7 +4698,6 @@ textarea.form-control-lg {
 }
 
 .pagination {
-	
 	--bs-pagination-padding-x: 0.75rem;
 	--bs-pagination-padding-y: 0.375rem;
 	--bs-pagination-font-size: 10rem;
@@ -5263,7 +5265,7 @@ keyframes progress-bar-stripes { 0% {
 }
 
 .list-group-flush {
-	width : 250px;
+	width: 250px;
 	border-radius: 0;
 }
 
@@ -5554,7 +5556,6 @@ keyframes progress-bar-stripes { 0% {
 	overflow-x: hidden;
 	overflow-y: auto;
 	outline: 0;
-
 }
 
 .modal-dialog {
@@ -6422,9 +6423,17 @@ keyframes spinner-grow { 0% {
 
 
 
+
+
+
+
 %
 {
 opacity
+
+
+
+
 
 
 
@@ -6434,7 +6443,15 @@ opacity
 
 
 
+
+
+
+
 1
+
+
+
+
 
 
 ;
@@ -6443,12 +6460,24 @@ transform
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
+
+
 none
+
+
+
+
 
 
 ;

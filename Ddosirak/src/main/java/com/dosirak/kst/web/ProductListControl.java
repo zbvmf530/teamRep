@@ -23,7 +23,7 @@ public class ProductListControl implements Control {
 		
 	    ProductService svc = new ProductServiceImpl();
 
-	    List<ProductVO> list = svc.productList(main);
+	    List<ProductVO> list = svc.productList(main, sub);
 	    
 	    req.setAttribute("main", main);
 	    req.setAttribute("sub", sub);  

@@ -14,8 +14,6 @@ public class ReviewWriteControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		
-		
-		
 		req.getRequestDispatcher("review/reviewWrite.tiles").forward(req, resp);
 		
 	}
