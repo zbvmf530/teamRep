@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.dosirak.common.DataSource;
+import com.dosirak.common.vo.CategoryVO;
 import com.dosirak.common.vo.ProductVO;
 import com.dosirak.jsb.mapper.ProductMapper;
 
@@ -48,6 +49,13 @@ public class ProductServiceImpl implements ProductService{
 	public ProductVO getProduct(int product_code) {
 		// TODO Auto-generated method stub
 		return mapper.getProduct(product_code);
+	}
+
+
+	@Override
+	public List<CategoryVO> getNavMenu() {
+		// TODO Auto-generated method stub
+		return mapper.getNavMenu();
 	}
 
 
