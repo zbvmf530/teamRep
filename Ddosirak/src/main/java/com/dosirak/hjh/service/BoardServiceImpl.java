@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.dosirak.common.DataSource;
 import com.dosirak.common.vo.BoardVO;
 import com.dosirak.common.vo.SearchVO;
+import com.dosirak.common.vo.TmemberVO;
 import com.dosirak.hjh.mapper.BoardMapper;
 
 public class BoardServiceImpl implements BoardService {
@@ -47,5 +48,6 @@ public class BoardServiceImpl implements BoardService {
 	public boolean delBoard(BoardVO board) {
 		return mapper.deleteBoard(board) == 1;
 	}
+
 
 }

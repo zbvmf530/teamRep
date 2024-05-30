@@ -75,6 +75,11 @@ div.reply span {
 			<tr>
 				<th>제목</th>
 				<th>${result.boardTitle }</th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				
 			</tr>
 			<tr>
 				<th>작성자</th>
@@ -88,9 +93,25 @@ div.reply span {
 			<tr>
 				<th>내용</th>
 				<td>${result.boardContent }</td>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
 			</tr>
 			<tr align="center">
-				<td colspan="4">
+
+				<c:choose>
+					<c:when test="${not empty result.boardImg }">
+						<td  colspan="8"><img src="./imgs/${result.boardImg }" width="800" height="1000"></td> 
+					</c:when>
+					<c:otherwise>
+						<!-- 이미지가 없을때 실행 -->
+					</c:otherwise>
+				</c:choose>
+			</tr>	
+			
+			<tr align="center">
+				<td colspan="8">
 					<button class="btn btn-danger" id="delBtn">삭제</button>
 					<button class="btn btn-primary" id="modBtn">수정</button>
 				</td>
@@ -101,33 +122,30 @@ div.reply span {
 </c:choose>
 
 <!-- 댓글목록 -->
+
 <div class="container reply">
 	<div class="content">
 		<ul>
 			<li style="display: none;">
-				<span class="col-sm-2">아이디</span>
-			 	<span class="col-sm-2">날짜</span> 
-			 	<span class="col-sm-2">내용</span>
+				<span class="col-sm-1">아이디</span>
+			 	<span class="col-sm-4">날짜</span> 
+			 	<span class="col-sm-4">내용</span>
+			 	<div id='update'>
+			 	<input class="col-sm-8" id="reply">
+			 	</div>
 			 	<span class="col-sm-1"><button onclick="updateRow(event)" class="btn btn-warning">수정</button></span> 
 			 	<span class="col-sm-1"><button onclick="deleteRow(event)" class="btn btn-warning">삭제</button></span>
 			</li>
 		</ul>
 	</div>
 	<!-- content -->
-		<div class = "footer">
-		<div class="centers">
-  			<div class="pagination">
-  			<a href = "#">1</a>
-  			<a href = "#" class = "active">2</a>
-  			<a href = "#">3</a>
-  			</div>
-  		</div>
+	
 			<p>댓글달기</p>
 			<input class="col-sm-8" id="reply">
 			<button class="col-sm-1" id="addReply">확인</button>
 		
 	</div>
-</div>
+
 <!-- container -->
 
 

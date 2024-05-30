@@ -4,9 +4,6 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dosirak.hjh.mapper.BoardMapper">
 
-  <!--     select * from tbl_boards2 -->
-  <!--     order by board_no -->
- 
  <select id="boardList" resultType="com.dosirak.common.vo.BoardVO" parameterType="com.dosirak.common.vo.SearchVO">
      select b.* 
      from (select rownum rn, a.*
@@ -67,25 +64,34 @@
 	select count(1) from tbl_boards2 
 				where 
 				<choose>
+                   <when test="boardType == 'N'.toString() ">
+                     category = '공지사항'
+                   </when>
+                   <otherwise>
+                     category != '공지사항'
+                   </otherwise>
+                 </choose>
+                 
+				<choose>
 				<when test="searchCondition == 'T'.toString() ">
-				board_title like '%'||#{keyword}||'%'
+				and board_title like '%'||#{keyword}||'%'
 				</when>
 				<when test="searchCondition == 'W'.toString() ">
-				member_id like '%'||#{keyword}||'%'
+				and member_id like '%'||#{keyword}||'%'
 				</when>
 				<otherwise>
-				board_title like '%'||#{keyword}||'%'
+				and(board_title like '%'||#{keyword}||'%'
 				or
-				member_id like '%'||#{keyword}||'%'
+				member_id like '%'||#{keyword}||'%')
 				</otherwise>
 				</choose>
 	
 	</select>
 	
-	<insert id="insertBoard" parameterType="com.dosirak.common.vo.BoardVO">
-		insert into tbl_boards2(board_no, category, board_title, board_content)
-		values (board2_seq.nextval,#{category},#{boardTitle},#{boardContent})
-  </insert>
+ 	<insert id="insertBoard" parameterType="com.dosirak.common.vo.BoardVO">
+		insert into tbl_boards2(board_no, member_id, category, board_title, board_content, board_img)
+		values (board2_seq.nextval,#{memberId},#{category},#{boardTitle},#{boardContent},#{boardImg})
+    </insert>
 	
 	<select id ="selectBoard" parameterType="int" resultType="com.dosirak.common.vo.BoardVO">
 	select * from tbl_boards2
@@ -98,14 +104,12 @@
 	where board_no = #{boardNo}
 	</update>
 	
-		
 	<update id="updateBoard"  parameterType="com.dosirak.common.vo.BoardVO" >
 	update tbl_boards2
 	set board_title = #{boardTitle} , board_content = #{boardContent}
 	where board_no = #{boardNo}
 	</update>
 	
-		
 	<delete id="deleteBoard"  parameterType="int" >
 	delete tbl_boards2
 	where board_no = #{boardNo}

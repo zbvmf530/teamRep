@@ -14,8 +14,8 @@ document.querySelector('#delBtn').addEventListener('click', function() {
 	if(confirm("삭제하시겠습니까?")== true){
 		document.forms.myFrm.action = "deleteBoard.do";
 		alert('삭제되었습니다'); //삭제화면 호출
+		document.forms.myFrm.submit();
 	}
-	
 })
 
 //댓글목록 출력
@@ -65,12 +65,17 @@ function deleteRow(e) {
 }
 //수정
 function updateRow(e) {
+	const update= document.getElementById('update');
 	const rno = e.target.parentElement.parentElement.dataset.rno; //숫자 가져오기
 	const reply = e.target.parentElement.parentElement.dataset.reply; //숫자 가져오기
 	console.log("댓글번호는" + rno);
 	console.log("내용은" + reply);
 	svc.updateReply({ rno,writer,reply },
 		result => {
+			if(update.style.display == 'none'){
+				update.style.display = 'block';
+			}else{
+				update.style.display = 'none'}
 			if (result.retCode == 'OK') {
 				
 					alert('수정되었습니다'); //삭제화면 호출

@@ -13,6 +13,8 @@ public class BoardVO {
 	private String category;
 	private String boardTitle;
 	private String boardContent;
+	private String boardImg;
+	
 
 	private Date boardDate;
 	private String boardPw;
