@@ -88,9 +88,3 @@ String auth = (String) session.getAttribute("auth");
     
 
 <hr />
-
-    <script>
-	const totalList = JSON.parse('${json}');
-	const logid = '${logId}';
-	const auth = '${auth}';
-</script>

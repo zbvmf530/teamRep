@@ -126,12 +126,3 @@
 			</div>
 		</div>
 	</form>
-
-
-</div>
-
-<script>
-	const totalList = JSON.parse('${json}');
-	const logid = '${logId}';
-	const auth = '${auth}';
-</script>

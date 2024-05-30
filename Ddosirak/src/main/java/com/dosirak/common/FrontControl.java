@@ -23,6 +23,7 @@ import com.dosirak.hjh.web.ReplyListControl;
 import com.dosirak.hjh.web.TotalCountControl;
 import com.dosirak.jsb.web.CartControl;
 import com.dosirak.jsb.web.CartFormControl;
+import com.dosirak.jsb.web.EditCartControl;
 import com.dosirak.jsb.web.GetIDControl;
 import com.dosirak.jsb.web.MainControl;
 import com.dosirak.jsb.web.MenuControl;
@@ -41,6 +42,7 @@ import com.dosirak.ksh.web.tLoginControl;
 import com.dosirak.ksh.web.tLoginForm;
 import com.dosirak.kst.web.ProductDetailControl;
 import com.dosirak.kst.web.ProductListControl;
+import com.dosirak.kst.web.ProductOptionPriceControl;
 import com.dosirak.kst.web.ReviewWriteControl;
 
 
@@ -74,7 +76,7 @@ Map<String, Control> map;
 		map.put("/cartList.do", new CartControl());
 		map.put("/optionJson.do", new OptionJsonControl());
 		map.put("/productJson.do", new ProductJsonControl());
-		
+		map.put("/editCart.do", new EditCartControl());	
 		// 로그인, 회원가입 관련 콘트롤
 		map.put("/tloginForm.do", new tLoginForm());
 		map.put("/tlogin.do", new tLoginControl());
@@ -104,6 +106,7 @@ Map<String, Control> map;
 		// 상품관련
 		map.put("/productlist.do", new ProductListControl()); // 상품리스트
 		map.put("/productDetail.do", new ProductDetailControl()); // 상품상세화면
+		map.put("/productGetPrice.do", new ProductOptionPriceControl());
 		
 		// 리뷰작성
 		map.put("/reviewWrite.do", new ReviewWriteControl()); // 리뷰작성

@@ -11,6 +11,6 @@ public class ReviewVO {
 	private String reviewContent;
 	private int grade;
 	private int productCode;
-	private int gradeAvg;
+	private double gradeAvg;
 	private int reviewCnt;
 }

@@ -32,6 +32,7 @@ public class ProductDetailControl implements Control {
 	    String prodImage = svc.getImage(code);
 	    
 	    
+	    
 	    req.setAttribute("code", code);
 	    req.setAttribute("reviewCnt", reviewCnt);
 		req.setAttribute("optionList", optionList);
@@ -39,6 +40,8 @@ public class ProductDetailControl implements Control {
 		req.setAttribute("reviews", review);
 		req.setAttribute("gradeAvg", gradeAvg);
 		req.setAttribute("prodImage", prodImage);
+		
+		
 		
 		req.getRequestDispatcher("product/productDetail.tiles").forward(req, resp);
 

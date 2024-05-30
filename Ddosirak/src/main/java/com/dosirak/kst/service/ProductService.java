@@ -7,7 +7,7 @@ import com.dosirak.common.vo.ProductVO;
 
 // 비즈니스 로직
 public interface ProductService {
-	List<ProductVO> productList(String main_category);
+	List<ProductVO> productList(String main, String sub);
 	ProductVO productOption(int code);
 	ProductVO getProduct(int product_code);
 	List<Map<String,String>> getMainCat();
@@ -20,4 +20,5 @@ public interface ProductService {
 	double getGradeAvg(int code);
 	int getOptionPricesForProduct(int code, String option);
 	String getImage(int code);
+	int calculatePrice(int code);
 }
