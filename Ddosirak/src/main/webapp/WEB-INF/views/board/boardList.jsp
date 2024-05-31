@@ -34,14 +34,35 @@
 .pagination a:hover:not(.active) {
 	background-color: #ddd;
 }
+
+h3 {
+	text-align: center;
+}
+
+button {
+	background-color: #ff6f61;
+	border-color: #ff6f61;
+	color: #fff;
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.5rem;
+	padding: .875rem 1.75rem;
+	text-align: center;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out,
+		border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+		    height: calc(3.25rem + 2px);
+    white-space: nowrap;
+		
+}
 </style>
 <c:choose>
-<c:when test="${boardType =='N'}">
-<h3>NOTICE</h3>
-</c:when>
-<c:otherwise>
-<h3>Q&A</h3>
-</c:otherwise>
+	<c:when test="${boardType =='N'}">
+		<h3>NOTICE</h3>
+	</c:when>
+	<c:otherwise>
+		<h3>Q&A</h3>
+	</c:otherwise>
 </c:choose>
 
 
@@ -78,17 +99,17 @@
 
 
 					<td>${board.memberId }</td>
-							<td><fmt:formatDate value="${board.boardDate }"
-									pattern="yyyy-MM-dd" /></td>
-							<td>${board.boardViews }</td>
-							<td><c:choose>
-									<c:when test="${board.replyCnt != 0 }">
-										<p>답변완료</p>
-									</c:when>
-									<c:otherwise>
-										<p>답변대기</p>
-									</c:otherwise>
-								</c:choose></td>
+					<td><fmt:formatDate value="${board.boardDate }"
+							pattern="yyyy-MM-dd" /></td>
+					<td>${board.boardViews }</td>
+					<td><c:choose>
+							<c:when test="${board.replyCnt != 0 }">
+								<p>답변완료</p>
+							</c:when>
+							<c:otherwise>
+								<p>답변대기</p>
+							</c:otherwise>
+						</c:choose></td>
 				</tr>
 
 
@@ -104,7 +125,7 @@
 
 <div class="row">
 	<form action="boardList.do">
-	<input type="hidden" name="boardType" value="${boardType }">
+		<input type="hidden" name="boardType" value="${boardType }">
 		<div class="row">
 			<div class="col-sm-3">
 				<select name="searchCondition" class="form-control">

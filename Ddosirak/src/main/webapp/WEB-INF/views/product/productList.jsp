@@ -90,6 +90,7 @@ h3 {
     }
 }
 </style>
+
 <h3>상품목록페이지..</h3>
 <div class="product-list">
     <c:forEach var="product" items="${productList}">

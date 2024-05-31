@@ -16,7 +16,6 @@ document.querySelector('#delBtn').addEventListener('click', function() {
 		alert('삭제되었습니다'); //삭제화면 호출
 		document.forms.myFrm.submit();
 	}
-	
 })
 
 //댓글목록 출력
@@ -66,12 +65,17 @@ function deleteRow(e) {
 }
 //수정
 function updateRow(e) {
+	const update= document.getElementById('update');
 	const rno = e.target.parentElement.parentElement.dataset.rno; //숫자 가져오기
 	const reply = e.target.parentElement.parentElement.dataset.reply; //숫자 가져오기
 	console.log("댓글번호는" + rno);
 	console.log("내용은" + reply);
 	svc.updateReply({ rno,writer,reply },
 		result => {
+			if(update.style.display == 'none'){
+				update.style.display = 'block';
+			}else{
+				update.style.display = 'none'}
 			if (result.retCode == 'OK') {
 				
 					alert('수정되었습니다'); //삭제화면 호출
@@ -87,15 +91,17 @@ function updateRow(e) {
 }
 //등록
 $('#addReply').on('click',function(){
+	
 	let reply = $('#reply').val();
+	console.log("댓글은"+reply);
 	if(!reply){
 		alert('댓글을 입력하세요');
 		return;
 	}
-//	if(!writer){
-//		alert('로그인하세요');
-//		return;
-//	}
+	if(!writer){
+		alert('로그인하세요');
+		return;
+	}
 	svc.addReply({ bno,writer,reply },
 		result => {
 			if (result.retCode == 'OK') {

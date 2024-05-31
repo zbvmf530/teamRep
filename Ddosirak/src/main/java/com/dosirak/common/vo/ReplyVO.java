@@ -14,5 +14,6 @@ public class ReplyVO {
 	
 	private Date replyDate;	//작성일자
 	private int replyCnt;
+
 	
 }

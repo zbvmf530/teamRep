@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.dosirak.common.vo.BoardVO;
 import com.dosirak.common.vo.SearchVO;
+import com.dosirak.common.vo.TmemberVO;
+
+
 
 public interface BoardService {
 	
@@ -18,6 +21,8 @@ public interface BoardService {
 	boolean modifyBoard(BoardVO board);
 	//삭제
 	boolean delBoard(BoardVO board);
-
-
+	
+//	TmemberVO login(String id, String pw);
+//	TmemberVO checkMember(String id);
+	
 }

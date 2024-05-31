@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.dosirak.common.vo.ReplyVO;
 import com.dosirak.common.vo.SearchVO;
+import com.dosirak.common.vo.TmemberVO;
 
 
 public interface ReplyMapper {
@@ -19,5 +20,7 @@ public interface ReplyMapper {
 	int updateReply(ReplyVO vro);
 	//댓글갯수(페이징)
 	int replyCnt(int boardNo);
+	TmemberVO checkMember(String id);
+	
 	
 }

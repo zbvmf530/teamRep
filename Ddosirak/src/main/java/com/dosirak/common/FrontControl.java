@@ -23,6 +23,7 @@ import com.dosirak.hjh.web.ReplyListControl;
 import com.dosirak.hjh.web.TotalCountControl;
 import com.dosirak.jsb.web.CartControl;
 import com.dosirak.jsb.web.CartFormControl;
+import com.dosirak.jsb.web.CheckoutFormControl;
 import com.dosirak.jsb.web.EditCartControl;
 import com.dosirak.jsb.web.GetIDControl;
 import com.dosirak.jsb.web.MainControl;
@@ -77,6 +78,10 @@ Map<String, Control> map;
 		map.put("/optionJson.do", new OptionJsonControl());
 		map.put("/productJson.do", new ProductJsonControl());
 		map.put("/editCart.do", new EditCartControl());	
+		
+		// 결제 페이지 
+		map.put("/checkout.do", new CheckoutFormControl());
+		
 		// 로그인, 회원가입 관련 콘트롤
 		map.put("/tloginForm.do", new tLoginForm());
 		map.put("/tlogin.do", new tLoginControl());
