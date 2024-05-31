@@ -6,9 +6,9 @@
 <%@page import="java.util.Map"%>
 
 <h3>리뷰작성페이지</h3>
-<div class="review-intake-form__rating" style="">
-	<div class="review-table" style="">
-		<div class="review-table__cell review-intake-head title" style="">
+<div>
+	<div>
+		<div>
 			<img src="/testimages/${prodImg }" width="100" height="100"
 				title="${prodName }">
 		</div>
@@ -16,27 +16,13 @@
 			<div class="review-intake-form__product-title" style="">${prodName }
 			</div>
 		</div>
-		<div class="review-intake-form__rating" style="">
-			<div class="star-rating">
-				<span class="star" data-rating="1">&#9733;</span> 
-				<span class="star" data-rating="2">&#9733;</span>
-				<span class="star" data-rating="3">&#9733;</span>
-				<span class="star" data-rating="4">&#9733;</span>
-				<span class="star" data-rating="5">&#9733;</span>
-				<input type="hidden" name="rating" class="rating-value" value="1">
-			</div>
-		</div>
 	</div>
 </div>
-<div class="review-intake-form__detail-review" style="">
-
-
-	<div class="my-review__modify__review" style="">
-		<div class="my-review__modify__field__title" style="">상세리뷰</div>
-
-		<div class="my-review__modify__review__content" style="">
-
-			<div class="my-review__modify__review__content__text-wrap" style="">
+<div>
+	<div>
+		<div>상세리뷰</div>
+		<div>
+			<div>
 				<textarea
 					class="my-review__modify__review__content__text-area js_reviewModifyTextArea"
 					placeholder="솔직한 리뷰 작성해주세요.." rows="5"
@@ -44,8 +30,7 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="review-intake-register" style="">
+	<div>
 		<button class="btn btn-secondary" type="button" style="">취소하기</button>
 		<button class="btn btn-success" type="button" id="regiBtn" style="">등록하기</button>
 		<div class="modal" id="regiModal">
