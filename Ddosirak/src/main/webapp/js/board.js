@@ -27,16 +27,17 @@ if (delBtn) {
 }
 
 //등록
-document.querySelector('#addBtn').addEventListener('click', function() {
-	//	document.forms.myFrm.action = "addForm.do";
-	//		document.forms.myFrm.submit();
-	if (writer =='none') {
+if (location.pathname == '/Ddosirak/boardList.do') {
+	document.querySelector('#addBtn').addEventListener('click', function() {
+		//	document.forms.myFrm.action = "addForm.do";
+		//		document.forms.myFrm.submit();
+		if (writer == 'none') {
 			alert('로그인하세요');
 			return;
 		}
-	window.location.href = ("addForm.do");
-})
-
+		window.location.href = ("addForm.do");
+	})
+}
 
 
 if (location.pathname == '/Ddosirak/boardInfo.do') {
@@ -113,10 +114,11 @@ if (location.pathname == '/Ddosirak/boardInfo.do') {
 			})
 			, err => cosnsole.log(err);
 	}
+
 	//등록
 	$('#addReply').on('click', function() {
 
-		let reply = $('#reply').val();
+		let reply = $('#replyInfo').val();
 		console.log("댓글은" + reply);
 		if (!reply) {
 			alert('댓글을 입력하세요');
@@ -132,12 +134,12 @@ if (location.pathname == '/Ddosirak/boardInfo.do') {
 					alert('등록되었습니다');
 					page = 1;
 					showList();
-					$('#reply').val('');
+					$('#replyInfo').val('');
 
 				}
 			}
 			, err => console.log(err));
-	})
+	}); // end of addReply
 
 
 	//row생성을 함수에 담은것
@@ -146,7 +148,7 @@ if (location.pathname == '/Ddosirak/boardInfo.do') {
 		console.log("tmpl" + tmpl);
 		tmpl.style.display = 'block';
 		tmpl.setAttribute('data-rno', reply.replyNo);
-		tmpl.querySelector('span:nth-of-type(1)').innerText = reply.memberId;
+		tmpl.querySelector('span:nth-of-type(1)').innerText = reply.replyNo;
 		tmpl.querySelector('span:nth-of-type(2)').innerText = reply.replyDate;
 		tmpl.querySelector('span:nth-of-type(3)').innerText = reply.replyContent;
 		return tmpl;

@@ -9,7 +9,7 @@ public class BoardVO {
 
 	private int boardNo; // board_no
 	private String memberId;
-	private int prodCode;
+	private String prodCode;
 	private String category;
 	private String boardTitle;
 	private String boardContent;
