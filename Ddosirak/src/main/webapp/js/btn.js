@@ -20,7 +20,8 @@ document.getElementById("confirmButton").addEventListener("click", function() {
 });
 
 document.getElementById("wishButton").addEventListener("click", function() {
-	window.location.href = "http://localhost:8080/Ddosirak";
+    var productCode = document.getElementById('prodCode').value;
+	window.location.href = "wishList.do?code=${code}";
 });
 
 document.getElementById("jangButton").addEventListener("click", function() {

@@ -69,4 +69,6 @@
 		group by
 		product_code
 	</select>
+	
+
 </mapper>
