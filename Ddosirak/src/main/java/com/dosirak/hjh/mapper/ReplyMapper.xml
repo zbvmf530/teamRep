@@ -34,8 +34,8 @@ where reply_no = #{replyNo}
 	<selectKey resultType="int" keyProperty="replyNo" order="BEFORE">
 	select replyes_seq.nextval from dual 
 	</selectKey>
-insert into tbl_replyes2(reply_no, reply_content, board_no)
-values (replyes_seq.nextval,#{replyContent},#{boardNo})
+insert into tbl_replyes2(reply_no, member_id, reply_content, board_no)
+values (replyes_seq.nextval,#{memberId},#{replyContent},#{boardNo})
 </insert>
 
 <update id="updateReply" parameterType="com.dosirak.common.vo.ReplyVO">

@@ -91,15 +91,17 @@ function updateRow(e) {
 }
 //등록
 $('#addReply').on('click',function(){
+	
 	let reply = $('#reply').val();
+	console.log("댓글은"+reply);
 	if(!reply){
 		alert('댓글을 입력하세요');
 		return;
 	}
-//	if(!writer){
-//		alert('로그인하세요');
-//		return;
-//	}
+	if(!writer){
+		alert('로그인하세요');
+		return;
+	}
 	svc.addReply({ bno,writer,reply },
 		result => {
 			if (result.retCode == 'OK') {

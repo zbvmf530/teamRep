@@ -49,12 +49,12 @@ div.reply span {
 .pagination a:hover:not(.active) {
 	background-color: #ddd;
 }
+
 </style>
 
 
 
 
-<h2>상세화면</h2>
 
 
 <c:choose>

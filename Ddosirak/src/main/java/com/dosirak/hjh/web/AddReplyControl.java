@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dosirak.common.Control;
 import com.dosirak.common.vo.ReplyVO;
+import com.dosirak.common.vo.TmemberVO;
 import com.dosirak.hjh.service.ReplyService;
 import com.dosirak.hjh.service.ReplyServiceImpl;
 import com.google.gson.Gson;
@@ -28,26 +29,26 @@ public class AddReplyControl implements Control {
 		String bno = req.getParameter("bno");
 	
 		
-		
+		String path = "Reply/addReply.tiles";	
 		ReplyVO rvo = new ReplyVO();
+		
 		rvo.setBoardNo(Integer.parseInt(bno));
 		rvo.setReplyContent(reply);
-		rvo.setMemberId(replyer);
 		
 		Map<String, Object> result = new HashMap<>(); 
 		
-//		MemberVO mvo = rvo.checkMember(replyer);
-//		if(mvo == null) {
-//			
-//			req.setAttribute("message", "권한이 없습니다");
-//			req.getRequestDispatcher(path).forward(req, resp);
-//			return;
-//		}
+		TmemberVO mvo = rvo.checkMember(replyer);
+		if(mvo == null) {
+			
+			req.setAttribute("message", "권한이 없습니다");
+			req.getRequestDispatcher(path).forward(req, resp);
+			return;
+		}
 		
 		ReplyService svc= new ReplyServiceImpl();
 		if(svc.addReply(rvo)){
-//			System.out.println("등록성공");
-//			resp.sendRedirect("main.do");
+			System.out.println("등록성공");
+			resp.sendRedirect("main.do");
 			result.put("retCode", "OK");
 			result.put("retVal", rvo);
 			

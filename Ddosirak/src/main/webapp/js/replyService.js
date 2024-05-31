@@ -10,12 +10,12 @@ const svc = {
 			.catch(errorCall);
 	},
 	// 댓글등록 => 댓글정보, 성공콜백, 실패콜백
-	addReply(param = {}, successCall, errorCall) {
+addReply(param = {}, successCall, errorCall) {
 		//fetch('addReply.do?bno=' + param.bno + '&replyer=' + param.writer + '&reply=' + param.reply)
 		fetch('addReply.do', {
 			method: 'post',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: 'bno=' + param.bno + '&replyer=' + param.writer +  '&reply=' + param.reply
+			body: 'bno=' + param.bno + '&replyer=' + param.writer + '&reply=' + param.reply
 		})
 			.then(resolve => resolve.json())
 			.then(successCall)

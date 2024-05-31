@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.dosirak.common.DataSource;
 import com.dosirak.common.vo.ReplyVO;
 import com.dosirak.common.vo.SearchVO;
+import com.dosirak.common.vo.TmemberVO;
 import com.dosirak.hjh.mapper.ReplyMapper;
 
 public class ReplyServiceImpl implements ReplyService{
@@ -37,6 +38,11 @@ public class ReplyServiceImpl implements ReplyService{
 	@Override
 	public int getReplyCnt(int boardNo) {
 		return mapper.replyCnt(boardNo);
+	}
+
+	@Override
+	public TmemberVO checkMember(String id) {
+		return mapper.c;
 	}
 
 }
