@@ -49,5 +49,15 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.deleteBoard(board) == 1;
 	}
 
+//	@Override
+//	public TmemberVO login(String id, String pw) {
+//		return mapper.tselectMember(id,pw);
+//	}
+//
+//	@Override
+//	public TmemberVO checkMember(String id) {
+//		return mapper.checkMember(id);
+//	}
+
 
 }

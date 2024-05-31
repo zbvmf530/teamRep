@@ -2,9 +2,12 @@ package com.dosirak.hjh.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.dosirak.common.vo.BoardVO;
 import com.dosirak.common.vo.SearchVO;
 import com.dosirak.common.vo.TmemberVO;
+
 
 
 
@@ -19,6 +22,12 @@ public interface BoardMapper {
 	int updateViewCnt(int boardNo);	//글 조회수
 	int updateBoard(BoardVO board); //글 수정
 	int deleteBoard(BoardVO board); //글 삭제
+	
+	TmemberVO tselectMember(@Param("id") String id, @Param("pw") String pw);
+	TmemberVO checkMember(String id);
+	
+	
+	
 	
 	
 

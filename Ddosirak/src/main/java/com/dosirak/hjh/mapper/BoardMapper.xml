@@ -115,5 +115,16 @@
 	where board_no = #{boardNo}
 	</delete >
 	
-	
+	<select id="checkMember" resultType="int" parameterType="String">
+    select count(1) from tbl_members
+    where member_id = #{id}
+  </select>
+
+
+<select id="tselectMember" resultType="int" parameterType="String">
+    select count(1)
+    from tbl_members
+    where member_id = #{id}
+    and   member_pw = #{pw}
+  </select>
 </mapper>

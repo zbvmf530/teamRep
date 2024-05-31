@@ -7,6 +7,7 @@ import com.dosirak.common.vo.SearchVO;
 import com.dosirak.common.vo.TmemberVO;
 
 
+
 public interface BoardService {
 	
 	List<BoardVO> boardList(SearchVO search);//목록
@@ -20,5 +21,8 @@ public interface BoardService {
 	boolean modifyBoard(BoardVO board);
 	//삭제
 	boolean delBoard(BoardVO board);
+	
+//	TmemberVO login(String id, String pw);
+//	TmemberVO checkMember(String id);
 	
 }

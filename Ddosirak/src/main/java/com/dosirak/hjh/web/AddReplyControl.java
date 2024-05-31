@@ -31,19 +31,18 @@ public class AddReplyControl implements Control {
 		
 		String path = "Reply/addReply.tiles";	
 		ReplyVO rvo = new ReplyVO();
-		
+		ReplyService rvc = new ReplyServiceImpl();
 		rvo.setBoardNo(Integer.parseInt(bno));
 		rvo.setReplyContent(reply);
 		
 		Map<String, Object> result = new HashMap<>(); 
 		
-		TmemberVO mvo = rvo.checkMember(replyer);
-		if(mvo == null) {
-			
-			req.setAttribute("message", "권한이 없습니다");
-			req.getRequestDispatcher(path).forward(req, resp);
-			return;
-		}
+//		TmemberVO mvo = rvc.checkMember(replyer);
+//		if(mvo == null) {
+//			req.setAttribute("message", "권한이 없습니다");
+//			req.getRequestDispatcher(path).forward(req, resp);
+//			return;
+//		}
 		
 		ReplyService svc= new ReplyServiceImpl();
 		if(svc.addReply(rvo)){

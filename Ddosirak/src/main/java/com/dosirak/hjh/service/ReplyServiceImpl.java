@@ -42,7 +42,10 @@ public class ReplyServiceImpl implements ReplyService{
 
 	@Override
 	public TmemberVO checkMember(String id) {
-		return mapper.c;
+		return mapper.checkMember(id);
 	}
+
+
+
 
 }

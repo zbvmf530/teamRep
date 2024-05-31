@@ -29,23 +29,23 @@ public class AddBoardControl implements Control {
 		
 		String title = mr.getParameter("boardTitle");
 		String content = mr.getParameter("boardContent");
-//		String id = mr.getParameter("id");
+		String id = mr.getParameter("id");
 		String category = mr.getParameter("selectCategory");
 		String img = mr.getFilesystemName("myImg");
-//		String path = "board/addBoard.tiles";
-//		MemberService tvc = new MemberServiceImpl();
-		
+		String path = "board/addBoard.tiles";
+		MemberService tvc = new MemberServiceImpl();
+//
 //		TmemberVO mvo = tvc.getMember(id);
 //		if(mvo == null) {
 //			req.setAttribute("message", "권한이 없습니다");
 //			req.getRequestDispatcher(path).forward(req, resp);
 //			return;
 //		}
-//		
+		
 		BoardVO vo = new BoardVO();
 		vo.setBoardTitle(title);
 		vo.setBoardContent(content);
-//		vo.setMemberId(id);
+		vo.setMemberId(id);
 		vo.setCategory(category);
 		vo.setBoardImg(img);
 		
