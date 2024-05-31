@@ -37,12 +37,12 @@ public class AddReplyControl implements Control {
 		
 		Map<String, Object> result = new HashMap<>(); 
 		
-//		TmemberVO mvo = rvc.checkMember(replyer);
-//		if(mvo == null) {
-//			req.setAttribute("message", "권한이 없습니다");
-//			req.getRequestDispatcher(path).forward(req, resp);
-//			return;
-//		}
+		TmemberVO mvo = rvc.checkMember(replyer);
+		if(mvo == null) {
+			req.setAttribute("message", "권한이 없습니다");
+			req.getRequestDispatcher(path).forward(req, resp);
+			return;
+		}
 		
 		ReplyService svc= new ReplyServiceImpl();
 		if(svc.addReply(rvo)){

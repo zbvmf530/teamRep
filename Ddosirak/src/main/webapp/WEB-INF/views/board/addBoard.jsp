@@ -3,17 +3,14 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
-<c:if test="${meassage != null}">
+<c:if test="${message != null}">
 	<p>${message }</p>
 </c:if>
 
 
 <form action="addBoard.do" method="post" enctype="multipart/form-data">
 
-<!-- 		<tr> -->
-<!-- 			<th>작성자</th> -->
-<%-- 			<td><input type="hidden" name="memberId" readonly value="${memberId }"></td> --%>
-<!-- 		</tr> -->
+	
 <table class="table">
 	<tr>
 		<td>카테고리</td>
