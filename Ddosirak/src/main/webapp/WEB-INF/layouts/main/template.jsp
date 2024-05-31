@@ -46,7 +46,7 @@
     <script src="./js/navmenu.js"></script>
     <script src="./js/updatePrice.js"></script>
     <script src="./js/star.js"></script>
-    <script src="./js/btn.js"></script>
+<!--     <script src="./js/btn.js"></script> -->
     
   </body>
 </html>
