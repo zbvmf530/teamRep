@@ -16,8 +16,3 @@
   </tr>
 </table>
 </form>
-<script>
-	const totalList = JSON.parse('${navmenu}');
-	const logid = '${logId}';
-	const auth = '${auth}';
-</script>
