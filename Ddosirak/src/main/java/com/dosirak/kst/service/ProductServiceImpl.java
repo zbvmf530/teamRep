@@ -40,7 +40,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductVO> productList(String main,String sub) {
+	public List<ProductVO> productList(String main, String sub) {
 		return mapper.productList(main, sub);
 	}
 
@@ -65,7 +65,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public double getGradeAvg(int code) {
 		// TODO Auto-generated method stub
-		return mapper.getGradeAvg(code);
+		/*
+		 * return mapper.getGradeAvg(code);
+		 */		
+		Double gradeAvg = mapper.getGradeAvg(code);
+		return (gradeAvg != null) ? gradeAvg : 0.0;
 	}
 
 	@Override
@@ -97,8 +101,5 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return mapper.getOptionPrice(code);
 	}
-
-
-
 
 }

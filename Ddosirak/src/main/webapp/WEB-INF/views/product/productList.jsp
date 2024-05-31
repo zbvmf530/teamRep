@@ -103,10 +103,10 @@ h3 {
                 </li>
                 <li class="list-group-item">${product.productName}</li>
                 <li class="list-group-item">
-                    <a href="https://www.goobnemall.com/shop/shopbrand.html?type=M&amp;xcode=003&amp;mcode=001" class="product-card-link" target="_blank">
+                    <a class="product-card-link" target="_blank" id="jangMiniBtn">
                         <img class="product-icon" src="https://www.goobnemall.com/design/goobne/wib/img/pc/icon_cartBg.svg" alt="Cart">
                     </a>
-                    <a href="https://www.goobnemall.com/shop/shopbrand.html?type=M&amp;xcode=003&amp;mcode=001" class="product-card-link" target="_blank">
+                    <a class="product-card-link" target="_blank" id="wishMiniBtn">
                         <img class="product-icon" src="https://www.goobnemall.com/design/goobne/wib/img/pc/icon_heartBg.svg" alt="Wishlist">
                     </a>
                 </li>
@@ -115,3 +115,5 @@ h3 {
         </div>
     </c:forEach>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/btn.js"></script>

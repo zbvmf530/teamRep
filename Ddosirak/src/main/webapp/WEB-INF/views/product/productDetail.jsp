@@ -98,9 +98,11 @@ h1, h3 {
 	display: inline-block;
 	margin: 0 5px;
 }
-.product-img-fluid{
-	margin : 0 auto;
+
+.product-img-fluid {
+	margin: 0 auto;
 }
+
 @media ( max-width : 768px) {
 	.card-container {
 		flex-direction: column;
@@ -108,6 +110,7 @@ h1, h3 {
 	}
 }
 </style>
+
 <input type="hidden" value="${code}" id="prodCode">
 <div id="detailContainer" class="product-detail">
 	<h1>상품상세페이지</h1>
@@ -166,7 +169,10 @@ h1, h3 {
 						</div>
 					</div>
 				</div>
-				<button type="button" class="btn btn-secondary" id="baroBtn">바로구매</button>
+				<button type="button" class="btn btn-secondary" id="baroBtn">
+					<a href="checkout.do">바로구매</a>
+				</button>
+
 			</div>
 		</div>
 	</div>
@@ -177,19 +183,25 @@ h1, h3 {
 	</div>
 	<hr />
 	<hr />
-	<div>
-		<h3 class="detailWrap">리뷰..</h3>
-		<h4>리뷰 수 - ${reviewCnt} 평점평균 - ${gradeAvg}</h4>
-		<c:forEach var="review" items="${reviews}">
-			<div class="review">
-				<h3>${review.reviewTitle}</h3>
-				<p>${review.reviewContent}</p>
-				<p>평점: ${review.grade}</p>
-				<dl class="desc">
-					<dt class="first">작성자</dt>
-					<dd class="pr-list-writer">${review.memberId}</dd>
-				</dl>
-			</div>
-		</c:forEach>
-	</div>
+		<div>
+			<h3 class="detailWrap">리뷰..</h3>
+			<h4>리뷰 수 - ${reviewCnt} 평점평균 - ${gradeAvg}</h4>
+			<c:forEach var="review" items="${reviews}">
+				<div class="review">
+					<h3>${review.reviewTitle}</h3>
+					<p>${review.reviewContent}</p>
+					<p>평점: ${review.grade}</p>
+					<dl class="desc">
+						<dt class="first">작성자</dt>
+						<dd class="pr-list-writer">${review.memberId}</dd>
+					</dl>
+				</div>
+			</c:forEach>
+		</div>
 </div>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/updatePrice.js"></script>
+<script src="./js/btn.js"></script>
+
+

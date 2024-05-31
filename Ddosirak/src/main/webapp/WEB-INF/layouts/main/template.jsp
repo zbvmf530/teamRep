@@ -44,9 +44,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="./js/navmenuService.js"></script>
     <script src="./js/navmenu.js"></script>
-    <script src="./js/updatePrice.js"></script>
-    <script src="./js/star.js"></script>
-    <script src="./js/btn.js"></script>
-    
+
   </body>
 </html>
