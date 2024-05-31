@@ -74,10 +74,10 @@
             </div>
 
             <!-- Button -->
-            <a class="btn w-100 btn-dark mb-2" href="checkout.html">Proceed to Checkout</a>
+            <a class="btn w-100 btn-dark mb-2" href="checkout.do">Proceed to Checkout</a>
 
             <!-- Link -->
-            <a class="btn btn-link btn-sm px-0 text-body" href="shop.html">
+            <a class="btn btn-link btn-sm px-0 text-body" href="main.do">
               <i class="fe fe-arrow-left me-2"></i> Continue Shopping
             </a>
 
