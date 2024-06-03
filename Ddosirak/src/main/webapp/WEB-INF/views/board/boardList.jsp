@@ -117,11 +117,19 @@ button {
 		</tbody>
 	</table>
 </div>
+
 <my:paging pageInfo="${paging }"></my:paging>
-<div class="row">
-	<button class="col-sm-2" id="addBoard"
-		onclick="location.href='addForm.do'">글쓰기</button>
+<c:choose>
+	
+	<c:when test="${boardType eq 'N'and( auth == 'user' or logId == 'none')}">
+
+	</c:when>
+	<c:otherwise>
+	<div class="row">
+	<button class="col-sm-2" id="addBtn">글쓰기</button>
 </div>
+	</c:otherwise>
+</c:choose>
 
 <div class="row">
 	<form action="boardList.do">
@@ -143,7 +151,13 @@ button {
 			</div>
 
 			<div class="col-sm-3">
-				<button type="submit">검색</button>
+			<button class="btn btn-danger" id="SearchBtn">검색</button>
 			</div>
 		</div>
 	</form>
+	</div>
+	<script>
+	
+	const writer = '${logId }';
+</script>
+	<script src="js/board.js"></script>

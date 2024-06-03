@@ -16,53 +16,41 @@ import com.dosirak.hjh.service.ReplyServiceImpl;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-
 public class AddReplyControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/json;charset=utf-8");
-		
-		//원본글, 댓글작성자, 댓글내용
+
+		// 원본글, 댓글작성자, 댓글내용
 		String replyer = req.getParameter("writer");
 		String reply = req.getParameter("reply");
 		String bno = req.getParameter("bno");
-	
-		
-		String path = "Reply/addReply.tiles";	
+
 		ReplyVO rvo = new ReplyVO();
-		ReplyService rvc = new ReplyServiceImpl();
 		rvo.setBoardNo(Integer.parseInt(bno));
 		rvo.setReplyContent(reply);
-		
-		Map<String, Object> result = new HashMap<>(); 
-		
-//		TmemberVO mvo = rvc.checkMember(replyer);
-//		if(mvo == null) {
-//			req.setAttribute("message", "권한이 없습니다");
-//			req.getRequestDispatcher(path).forward(req, resp);
-//			return;
-//		}
-		
-		ReplyService svc= new ReplyServiceImpl();
-		if(svc.addReply(rvo)){
+		rvo.setMemberId(replyer);
+
+		Map<String, Object> result = new HashMap<>();
+
+		ReplyService svc = new ReplyServiceImpl();
+		if (svc.addReply(rvo)) {
 			System.out.println("등록성공");
-			resp.sendRedirect("main.do");
+//			resp.sendRedirect("main.do");
 			result.put("retCode", "OK");
 			result.put("retVal", rvo);
-			
-			//resp.getWriter().print("{\"retCode\":\"OK\"}");
-		}else {
+
+			// resp.getWriter().print("{\"retCode\":\"OK\"}");
+		} else {
 			result.put("retCode", "NG");
 			result.put("retVal", null);
-			
+
 		}
 		Gson gson = new GsonBuilder().create();
 		String json = gson.toJson(result);
-		
+
 		resp.getWriter().print(json);
 	}
 
-	}
-
-
+}
