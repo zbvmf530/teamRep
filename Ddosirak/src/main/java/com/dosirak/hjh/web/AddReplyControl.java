@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dosirak.common.Control;
 import com.dosirak.common.vo.ReplyVO;
-import com.dosirak.common.vo.TmemberVO;
 import com.dosirak.hjh.service.ReplyService;
 import com.dosirak.hjh.service.ReplyServiceImpl;
 import com.google.gson.Gson;
@@ -26,6 +25,7 @@ public class AddReplyControl implements Control {
 		String replyer = req.getParameter("writer");
 		String reply = req.getParameter("reply");
 		String bno = req.getParameter("bno");
+		System.out.println("작성자"+replyer);
 
 		ReplyVO rvo = new ReplyVO();
 		rvo.setBoardNo(Integer.parseInt(bno));

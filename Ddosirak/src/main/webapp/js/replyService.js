@@ -15,7 +15,7 @@ addReply(param = {}, successCall, errorCall) {
 		fetch('addReply.do', {
 			method: 'post',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: 'bno=' + param.bno + '&replyer=' + param.writer + '&reply=' + param.reply
+			body: 'bno=' + param.bno + '&writer=' + param.writer + '&reply=' + param.reply
 		})
 			.then(resolve => resolve.json())
 			.then(successCall)
