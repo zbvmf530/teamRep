@@ -120,7 +120,11 @@ h1, h3 {
 
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item"><img class="product-img-fluid"
-					src="/Ddosirak/productimages/${prodImage}" alt="Product Image"></li>
+					style="width:220px;
+						   height:220px;
+						   "
+					src="/Ddosirak/productimages/${prodImage}" alt="Product Image" 
+					></li>
 			</ul>
 			
 		</div>

@@ -98,7 +98,7 @@ h3 {
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                     <a href="productDetail.do?code=${product.productCode}" class="product-card-link">
-                        <img class="product-img-fluid" src="/Ddosirak/productimages/${product.productImg}" alt="${product.productName}">
+                        <img class="product-img-fluid" style="width:220px;height:220px;" src="/Ddosirak/productimages/${product.productImg}" alt="${product.productName}">
                     </a>
                 </li>
                 <li class="list-group-item">${product.productName}</li>
