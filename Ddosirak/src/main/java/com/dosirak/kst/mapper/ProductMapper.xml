@@ -66,8 +66,6 @@
 		select
 		COALESCE(AVG(grade), 0) from tbl_reviews
 		where product_code=#{productCode}
-		group by
-		product_code
 	</select>
 	
 

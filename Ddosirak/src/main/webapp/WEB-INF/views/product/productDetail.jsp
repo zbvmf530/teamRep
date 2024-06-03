@@ -114,15 +114,15 @@ h1, h3 {
 <input type="hidden" value="${code}" id="prodCode">
 <div id="detailContainer" class="product-detail">
 	<h1>상품상세페이지</h1>
-
 	<h3 class="detailWrap"></h3>
 	<div class="card-container col-xs-12">
 		<div class="product-card m-b-20">
 
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item"><img class="product-img-fluid"
-					src="./testimages/${prodImage}" alt="Product Image"></li>
+					src="/Ddosirak/productimages/${prodImage}" alt="Product Image"></li>
 			</ul>
+			
 		</div>
 		<div class="product-card m-b-20">
 			<li class="list-group-item"><h5>${name}</h5></li>
@@ -134,7 +134,7 @@ h1, h3 {
 							<option value="${option.optionCode}">${option.optionName}</option>
 						</c:forEach>
 				</select>
-				</span><br> <span class="prod-price" id="productPrice">${optionList[0].optionPrice}원</span>
+				</span><br> <span class="prod-price" id="productPrice">가격 : ${optionList[0].optionPrice}원</span>
 			</div>
 			<div class="button-group">
 				<button type="button" class="btn btn-primary" id="wishBtn">위시리스트</button>
