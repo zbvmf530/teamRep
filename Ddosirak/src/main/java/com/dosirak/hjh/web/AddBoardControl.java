@@ -33,6 +33,8 @@ public class AddBoardControl implements Control {
 		String id = session.getAttribute("logId").toString();
 		String category = mr.getParameter("selectCategory");
 		String img = mr.getFilesystemName("myImg");
+		String product = mr.getParameter("selectProduct").toString();
+		
 		String path = "board/addBoard.tiles";
 		MemberService tvc = new MemberServiceImpl();
 		System.out.println("id = "+id);
@@ -52,6 +54,7 @@ public class AddBoardControl implements Control {
 		vo.setMemberId(id);
 		vo.setCategory(category);
 		vo.setBoardImg(img);
+		vo.setProdCode(product);
 		
 		System.out.println("이미지" + img);
 		

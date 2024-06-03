@@ -12,10 +12,12 @@
 
 	
 <table class="table">
+<c:choose>
+<c:when test="${auth == 'user'}">
 	<tr>
 		<td>카테고리</td>
 		<td><select name="selectCategory" class="form-control">
-					<option value="공지사항" ${selectCategory == '공지사항' ? 'selected' : ''}>공지사항</option>
+
 					<option value="상품문의" ${selectCategory == '상품문의' ? 'selected' : ''}>상품문의</option>
 					<option value="결제문의" ${selectCategory == '결제문의' ? 'selected' : ''}>결제문의</option>
 					<option value="배송문의" ${selectCategory == '배송문의' ? 'selected' : ''}>배송문의</option>
@@ -23,9 +25,20 @@
 						${selectCategory == '교환/반품문의' ? 'selected' : ''}>교환/반품문의</option>
 			</select></td>
 	</tr>
+	
 	<tr>
 		<td>상품선택</td>
-		<td>상품</td>
+		<c:forEach var="board" items="${boardList }">
+		<td>
+		<select name="selectProduct" class="form-control">
+		<option value="${board.productCode }">dddd</option>
+		
+	
+		</select><td>
+		</c:forEach>
+		
+		</c:when>
+	</c:choose>
 	</tr>
 	<tr>
 		<th>제목</th>

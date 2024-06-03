@@ -117,11 +117,11 @@ button {
 		</tbody>
 	</table>
 </div>
-${auth }
-${logId }
+
 <my:paging pageInfo="${paging }"></my:paging>
 <c:choose>
-	<c:when test="${boardType eq 'N'and auth == 'user' and logId eq none}">
+	
+	<c:when test="${boardType eq 'N'and( auth == 'user' or logId == 'none')}">
 
 	</c:when>
 	<c:otherwise>
