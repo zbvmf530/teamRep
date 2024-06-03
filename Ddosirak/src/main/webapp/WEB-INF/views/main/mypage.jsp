@@ -151,8 +151,8 @@ String auth = (String) session.getAttribute("auth");
                       <div class="col-6">
 
                         <!-- Button -->
-                        <a class="btn btn-sm w-100 btn-outline-dark" href="account-order.html">
-                          Order Details
+                        <a class="btn btn-sm w-100 btn-outline-dark" href="reviewWrite.do">
+                          리뷰 작성
                         </a>
 
                       </div>
@@ -247,8 +247,8 @@ String auth = (String) session.getAttribute("auth");
                       <div class="col-6">
 
                         <!-- Button -->
-                        <a class="btn btn-sm w-100 btn-outline-dark" href="account-order.html">
-                          Order Details
+                        <a class="btn btn-sm w-100 btn-outline-dark" href="reviewWrite.do">
+                          리뷰 작성
                         </a>
 
                       </div>
@@ -349,8 +349,8 @@ String auth = (String) session.getAttribute("auth");
                       <div class="col-6">
 
                         <!-- Button -->
-                        <a class="btn btn-sm w-100 btn-outline-dark" href="account-order.html">
-                          Order Details
+                        <a class="btn btn-sm w-100 btn-outline-dark" href="reviewWrite.do">
+                          리뷰 작성
                         </a>
 
                       </div>

@@ -54,9 +54,6 @@
 		          <li class="list-styled-item">
 		            <a class="list-styled-link" id = "signup" href="#!">회원가입</a>
 		          </li>
-		          <li class="list-styled-item">
-		            <a class="list-styled-link" id = "signup" href="#!">회원가입1</a>
-		          </li>
 		        </ul>
      		 </div>
             </li>
