@@ -148,7 +148,7 @@ if (location.pathname == '/Ddosirak/boardInfo.do') {
 		console.log("tmpl" + tmpl);
 		tmpl.style.display = 'block';
 		tmpl.setAttribute('data-rno', reply.replyNo);
-		tmpl.querySelector('span:nth-of-type(1)').innerText = reply.replyNo;
+		tmpl.querySelector('span:nth-of-type(1)').innerText = reply.memberId;
 		tmpl.querySelector('span:nth-of-type(2)').innerText = reply.replyDate;
 		tmpl.querySelector('span:nth-of-type(3)').innerText = reply.replyContent;
 		return tmpl;
