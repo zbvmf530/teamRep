@@ -77,7 +77,11 @@ button {
 				<th>작성자</th>
 				<th>작성일</th>
 				<th>조회수</th>
+				<c:choose>
+						<c:when test="${boardType =='Q'}">
 				<th>답변여부</th>
+				</c:when>
+				</c:choose>
 			</tr>
 		</thead>
 		<tbody>
@@ -102,7 +106,9 @@ button {
 					<td><fmt:formatDate value="${board.boardDate }"
 							pattern="yyyy-MM-dd" /></td>
 					<td>${board.boardViews }</td>
-					<td><c:choose>
+					<c:choose>
+						<c:when test="${boardType =='Q'}">
+						<td><c:choose>
 							<c:when test="${board.replyCnt != 0 }">
 								<p>답변완료</p>
 							</c:when>
@@ -110,6 +116,8 @@ button {
 								<p>답변대기</p>
 							</c:otherwise>
 						</c:choose></td>
+						</c:when>
+						</c:choose>
 				</tr>
 
 

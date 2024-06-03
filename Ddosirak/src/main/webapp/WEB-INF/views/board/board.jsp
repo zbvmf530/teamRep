@@ -133,11 +133,13 @@
 				<span class="col-sm-1">아이디</span>
 				<span class="col-sm-4">날짜</span>
 				<span class="col-sm-4">내용</span>
-				<div id='update'>
-					<input class="col-sm-8" id="reply">
-				</div>
-				<span class="col-sm-1"><button onclick="updateRow(event)" class="btn btn-warning">수정</button></span>
-				<span class="col-sm-1"><button onclick="deleteRow(event)" class="btn btn-warning">삭제</button></span>
+				
+				<span class="col-sm-1">
+			
+				<button onclick="deleteRow(event)" class="btn btn-warning">삭제</button>
+			
+				</span>
+		
 			</li>
 		</ul>
 	</div>
